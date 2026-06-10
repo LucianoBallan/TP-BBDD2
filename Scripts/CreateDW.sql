@@ -67,10 +67,10 @@ GO
 -- DIM_GEOGRAFIA
 CREATE TABLE [dbo].[DIM_GEOGRAFIA](
     [SK_GEOGRAFIA]       INT IDENTITY(1,1) PRIMARY KEY,
-    [Region]             VARCHAR(20) NOT NULL,
-    [Estado]             VARCHAR(50) NOT NULL,
-    [Ciudad]             VARCHAR(50) NOT NULL,
-    [ZipCode]            VARCHAR(20) NULL
+    [Region]             VARCHAR(100) NOT NULL,
+    [Estado]             VARCHAR(100) NOT NULL,
+    [Ciudad]             VARCHAR(100) NOT NULL,
+    [ZipCode]            VARCHAR(100) NULL
 ) ON [PRIMARY]
 GO
 
