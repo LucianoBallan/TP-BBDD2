@@ -44,7 +44,7 @@ CREATE TABLE [dbo].[DIM_CLIENTE](
     [Ciudad]             VARCHAR(50) NULL,
     [Estado]             VARCHAR(50) NULL,
     [Region]             VARCHAR(20) NULL,
-    [ZipCode]            VARCHAR(10) NULL
+    [ZipCode]            VARCHAR(20) NULL
 ) ON [PRIMARY]
 GO
 
@@ -70,7 +70,7 @@ CREATE TABLE [dbo].[DIM_GEOGRAFIA](
     [Region]             VARCHAR(20) NOT NULL,
     [Estado]             VARCHAR(50) NOT NULL,
     [Ciudad]             VARCHAR(50) NOT NULL,
-    [ZipCode]            VARCHAR(10) NULL
+    [ZipCode]            VARCHAR(20) NULL
 ) ON [PRIMARY]
 GO
 
