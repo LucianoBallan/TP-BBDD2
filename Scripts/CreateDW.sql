@@ -25,7 +25,7 @@ CREATE TABLE [dbo].[DIM_PRODUCTO](
     [ProductoID]         INT NOT NULL,
     [Detalle]            VARCHAR(100) NOT NULL,
     [Rubro]              VARCHAR(50) NOT NULL,
-    [Presentacion]       VARCHAR(50) NOT NULL,
+    [Presentacion]       VARCHAR(100) NOT NULL,
     [EsDiet]             BIT NOT NULL,
     [CapacidadML]        INT NOT NULL,
     [TipoEnvase]         VARCHAR(20) NOT NULL
