@@ -608,7 +608,7 @@
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{48058C92-33AA-437C-BF59-49F4DF284D94}"
-          SQLTask:SqlStatementSource="TRUNCATE TABLE [dbo].[stg_customer_min_G06];&#xA;TRUNCATE TABLE [dbo].[stg_customer_may_G06];" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:SqlStatementSource="TRUNCATE TABLE [dbo].[stg_empleados_G06];" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
   </DTS:Executables>
