@@ -1,0 +1,19 @@
+USE bd_staging_2026_G06
+GO
+
+SELECT
+    b.id            AS billing_id_interno,
+    b.billing_id,
+    b.customer_id,
+    b.employee_id,
+    b.date,
+    b.region,
+    b.product_id    AS billing_product_id,
+    b.quantity      AS billing_quantity,
+    bd.PRODUCT_ID   AS detail_product_id,
+    bd.QUANTITY     AS detail_quantity
+FROM stg_billing_G06 AS b
+INNER JOIN stg_billing_detail_G06 AS bd
+    ON b.billing_id = bd.BILLING_ID
+ORDER BY b.billing_id;
+GO
