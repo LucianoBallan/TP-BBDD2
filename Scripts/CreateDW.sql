@@ -38,8 +38,6 @@ CREATE TABLE [dbo].[DIM_CLIENTE](
     [CustomerID]         VARCHAR(50) NOT NULL,
     [NombreCompleto]     VARCHAR(100) NOT NULL,
     [FechaNacimiento]    DATE NULL,
-    [Edad]               INT NULL,
-    [GrupoEtario]        VARCHAR(30) NULL,
     [TipoCliente]        VARCHAR(20) NOT NULL,
     [Ciudad]             VARCHAR(50) NULL,
     [Estado]             VARCHAR(50) NULL,
