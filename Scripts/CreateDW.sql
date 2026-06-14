@@ -39,10 +39,10 @@ CREATE TABLE [dbo].[DIM_CLIENTE](
     [NombreCompleto]     VARCHAR(100) NOT NULL,
     [FechaNacimiento]    DATE NULL,
     [TipoCliente]        VARCHAR(20) NOT NULL,
-    [Ciudad]             VARCHAR(50) NULL,
-    [Estado]             VARCHAR(50) NULL,
-    [Region]             VARCHAR(20) NULL,
-    [ZipCode]            VARCHAR(20) NULL
+    [Ciudad]             VARCHAR(100) NULL,
+    [Estado]             VARCHAR(100) NULL,
+    [Region]             VARCHAR(100) NULL,
+    [ZipCode]            VARCHAR(100) NULL
 ) ON [PRIMARY]
 GO
 
