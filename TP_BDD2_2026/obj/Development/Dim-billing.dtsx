@@ -11,8 +11,8 @@
   DTS:LocaleID="11274"
   DTS:ObjectName="Dim-billing"
   DTS:PackageType="5"
-  DTS:VersionBuild="20"
-  DTS:VersionGUID="{7566E89D-8E53-4B05-8B9C-DF69881D02E5}">
+  DTS:VersionBuild="48"
+  DTS:VersionGUID="{FEB7C9F9-8F82-44C2-8E9B-417832901187}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -72,37 +72,47 @@
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[server-tuia.database.windows.net.alumno]"
-      DTS:CreationName="OLEDB"
-      DTS:DTSID="{129CBE76-45C9-459E-896B-90A40C2AFAAA}"
-      DTS:ObjectName="server-tuia.database.windows.net.alumno">
+      DTS:refId="Package.ConnectionManagers[src_mysql]"
+      DTS:CreationName="ADO.NET:System.Data.Odbc.OdbcConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+      DTS:DTSID="{F734E0D3-76FD-4D77-94A4-07495CFF3444}"
+      DTS:ObjectName="src_mysql">
       <DTS:ObjectData>
         <DTS:ConnectionManager
-          DTS:ConnectRetryCount="1"
-          DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=server-tuia.database.windows.net;User ID=alumno;Provider=MSOLEDBSQL.1;Application Name=SSIS-Dim-billing-{129CBE76-45C9-459E-896B-90A40C2AFAAA}server-tuia.database.windows.net.alumno;Auto Translate=False;">
+          DTS:ConnectionString="uid=alumno;Dsn=MySQL_Sales;">
           <DTS:Password
-            DTS:Name="Password"
+            DTS:Name="pwd"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAbyZSC5L5HUSXwBjgTDTfAAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABFaZKQg2xSBUcBHSQhRACAIoJK8DEmlZCg+gydKGmrGQAAAAAOgAAAAAIAACAAAAAARFuHB+OuJb2oNpKXezbddqzp+Do8LAXrsY4828BfoiAAAACDtRznJlkhwIOb9ZYf4s5H21aznlEuBA80clahjWqnDUAAAABBGFRbI47R2okNCLBnte17Vhm+9LnwCg/HPNzItDATzdrAJkRpEww9Cfs4WAWj3s6ks3sGVP+apWT0Yf9cWN9z</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAbyZSC5L5HUSXwBjgTDTfAAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACl8cy7CyME3N9iO2P9FFFTYdyzqesttNjb0u+8DEQmXQAAAAAOgAAAAAIAACAAAABAiw+sXOgXJBnGJjkBMTuajQImXCFZp8oguWPa90/Y6SAAAACaCiILbf3WzZc6RNCVs3g9nUsNZCJXJaxvsQHvvEwyREAAAADPbBOuWkPy8l2ufPvEUALeFB2PeqCqd0PT06KwygdLmfO7IrFB6cwcZNWEsSC6hhNveiQmmoWxNCy9xvRcoi4n</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[server-tuia.database.windows.net.TDChistorySales1.alumno]"
+      DTS:refId="Package.ConnectionManagers[src_sqlserver]"
       DTS:CreationName="OLEDB"
       DTS:DTSID="{2311474B-D892-45B4-ACAD-CF1ABB1E7A51}"
-      DTS:ObjectName="server-tuia.database.windows.net.TDChistorySales1.alumno">
+      DTS:ObjectName="src_sqlserver">
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=server-tuia.database.windows.net;User ID=alumno;Initial Catalog=TDChistorySales1;Provider=MSOLEDBSQL.1;Application Name=SSIS-Dim-billing-{2311474B-D892-45B4-ACAD-CF1ABB1E7A51}server-tuia.database.windows.net.TDChistorySales1.alumno;Auto Translate=False;">
+          DTS:ConnectionString="Data Source=server-tuia.database.windows.net;User ID=alumno;Initial Catalog=TDChistorySales2;Provider=MSOLEDBSQL.1;Persist Security Info=True;Auto Translate=False;Application Name=SSIS-Dim-billing-{2311474B-D892-45B4-ACAD-CF1ABB1E7A51}server-tuia.database.windows.net.TDChistorySales1.alumno;">
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAbyZSC5L5HUSXwBjgTDTfAAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAD9yqINLB84/i0aXovqm6ZSln3UwSjzo8Vtxv2t+V3g6gAAAAAOgAAAAAIAACAAAAAYXz1bXI0a8rdtoktl6VgjQzsZDLFlqa7yCZ0TxL0wwSAAAACAEAPnpqOVudoxhOzTL2DtEKVn2NQajV7ibrY362dJx0AAAAABmadpPmWLVvWh1DPKX3wFgu8/MZVcW0gRHpJufhF3yMcq/VaOKTIGyGFIeIWYbfCpVUKqXcq/ZwLIuJyR8HRO</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAbyZSC5L5HUSXwBjgTDTfAAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABZgVEOsEXE2fi3yhv1zRclOfE2qurTgsuG6a7Q7ecTqgAAAAAOgAAAAAIAACAAAACyoGYzig1ENikEoxcxKidgqtm9GQUPvKe6GJ/xWVKe2SAAAABAJpdmz+MJhPqEEmFLjw7lHnwcuhRarHACBSrUIejrZkAAAADKTA3zXOsCcLrDEJYsp1znAykrmEn9AC5WQa141KgPiSrq1T4Lnf65ECLInV6LPSboxUbED4WA+23NOca2cXbK</DTS:Password>
         </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[staging]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{6BEF45B3-1A6F-44BD-962D-43CF9E5C53F5}"
+      DTS:ObjectName="staging">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=TotoLENOVO\SQLEXPRESS;Initial Catalog=bd_staging_2026_G06;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-Dim-productos-{6BEF45B3-1A6F-44BD-962D-43CF9E5C53F5}TotoLENOVO\SQLEXPRESS.bd_staging_2026_G06;Auto Translate=False;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -149,54 +159,6 @@
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[TOTOLENOVO\SQLEXPRESS]"
-      DTS:CreationName="OLEDB"
-      DTS:DTSID="{88FAAE41-B827-47D3-A5A2-A36AC71C8C7B}"
-      DTS:ObjectName="TOTOLENOVO\SQLEXPRESS">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectRetryCount="1"
-          DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=TOTOLENOVO\SQLEXPRESS;Provider=SSISOLEDB.6;Location=C:\Program Files\Microsoft SQL Server\MSSQL16.SQLEXPRESS\MSSQL;" />
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[TotoLENOVO\SQLEXPRESS.bd_datawarehouse_2025_G15]"
-      DTS:CreationName="OLEDB"
-      DTS:DTSID="{8857CECA-A68B-40D3-B4FC-30FD33271EB8}"
-      DTS:ObjectName="TotoLENOVO\SQLEXPRESS.bd_datawarehouse_2025_G15">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectRetryCount="1"
-          DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=TotoLENOVO\SQLEXPRESS;Initial Catalog=bd_datawarehouse_2025_G15;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-Dim-billing-{8857CECA-A68B-40D3-B4FC-30FD33271EB8}TotoLENOVO\SQLEXPRESS.bd_datawarehouse_2025_G15;Auto Translate=False;" />
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[TotoLENOVO\SQLEXPRESS.bd_staging_2026_G06]"
-      DTS:CreationName="OLEDB"
-      DTS:DTSID="{6BEF45B3-1A6F-44BD-962D-43CF9E5C53F5}"
-      DTS:ObjectName="TotoLENOVO\SQLEXPRESS.bd_staging_2026_G06">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectRetryCount="1"
-          DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=TotoLENOVO\SQLEXPRESS;Initial Catalog=bd_staging_2026_G06;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-Dim-productos-{6BEF45B3-1A6F-44BD-962D-43CF9E5C53F5}TotoLENOVO\SQLEXPRESS.bd_staging_2026_G06;Auto Translate=False;" />
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[TotoLENOVO\SQLEXPRESS1]"
-      DTS:CreationName="OLEDB"
-      DTS:DTSID="{976BA04D-A23F-473C-8541-72D3C1D53915}"
-      DTS:ObjectName="TotoLENOVO\SQLEXPRESS1">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectRetryCount="1"
-          DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=TotoLENOVO\SQLEXPRESS;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-Dim-productos-{976BA04D-A23F-473C-8541-72D3C1D53915}TotoLENOVO\SQLEXPRESS1;Auto Translate=False;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -249,13 +211,13 @@
   <DTS:Variables />
   <DTS:Executables>
     <DTS:Executable
-      DTS:refId="Package\Data Flow Task"
+      DTS:refId="Package\staging"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
       DTS:DTSID="{98D5FAF9-0E45-43E8-B988-DC83172935EF}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Data Flow Task"
+      DTS:ObjectName="staging"
       DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
       <DTS:Variables />
       <DTS:ObjectData>
@@ -263,11 +225,1032 @@
           version="1">
           <components>
             <component
-              refId="Package\Data Flow Task\OLE DB Destination"
+              refId="Package\staging\billing"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="Consume datos de SQL Server, OLE DB, ODBC u Oracle mediante el correspondiente proveedor de datos de .NET Framework. Se usa una instrucción Transact-SQL para definir el conjunto de resultados. Por ejemplo, se extraen datos de SQL Server con el proveedor de datos de .NET Framework para SQL Server.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;4"
+              description="Consume datos de SQL Server, OLE DB, ODBC u Oracle mediante el correspondiente proveedor de datos de .NET Framework. Se usa una instrucción Transact-SQL para definir el conjunto de resultados. Por ejemplo, se extraen datos de SQL Server con el proveedor de datos de .NET Framework para SQL Server."
+              name="billing"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Especifica la instrucción SQL utilizada por el componente para extraer datos."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT NULL AS id, b.BILLING_ID AS billing_id, b.DATE AS date, b.CUSTOMER_ID AS customer_id, b.EMPLOYEE_ID AS employee_id, bd.PRODUCT_ID AS product_id, bd.QUANTITY AS quantity, b.REGION AS region FROM billing b INNER JOIN billing_detail bd ON b.BILLING_ID = bd.BILLING_ID</property>
+                <property
+                  dataType="System.Int32"
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                  name="CommandTimeout">30</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica si se debe permitir que columnas externas que no sean de cadenas se conviertan implícitamente en cadenas en las columnas de salida."
+                  name="AllowImplicitStringConversion">true</property>
+                <property
+                  dataType="System.String"
+                  description="Nombre de la tabla de la base de datos de origen."
+                  expressionType="Notify"
+                  name="TableOrViewName"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">billing_detail</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especificar el modo de recuperar información de columnas externas"
+                  name="AccessMode"
+                  typeConverter="Microsoft.SqlServer.Dts.Pipeline.DataReaderSourceAdapter+EnumToStringConverter">2</property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">Microsoft.DataReaderSourceAdapter</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\staging\billing.Connections[IDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[src_mysql]"
+                  connectionManagerRefId="Package.ConnectionManagers[src_mysql]"
+                  description="Administrador de conexiones administrado"
+                  name="IDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\staging\billing.Outputs[Salida de origen de ADO NET]"
+                  name="Salida de origen de ADO NET">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\staging\billing.Outputs[Salida de origen de ADO NET].Columns[id]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\staging\billing.Outputs[Salida de origen de ADO NET].ExternalColumns[id]"
+                      length="1"
+                      lineageId="Package\staging\billing.Outputs[Salida de origen de ADO NET].Columns[id]"
+                      name="id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\staging\billing.Outputs[Salida de origen de ADO NET].Columns[billing_id]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\staging\billing.Outputs[Salida de origen de ADO NET].ExternalColumns[billing_id]"
+                      lineageId="Package\staging\billing.Outputs[Salida de origen de ADO NET].Columns[billing_id]"
+                      name="billing_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\staging\billing.Outputs[Salida de origen de ADO NET].Columns[date]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\staging\billing.Outputs[Salida de origen de ADO NET].ExternalColumns[date]"
+                      lineageId="Package\staging\billing.Outputs[Salida de origen de ADO NET].Columns[date]"
+                      name="date"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\staging\billing.Outputs[Salida de origen de ADO NET].Columns[customer_id]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\staging\billing.Outputs[Salida de origen de ADO NET].ExternalColumns[customer_id]"
+                      lineageId="Package\staging\billing.Outputs[Salida de origen de ADO NET].Columns[customer_id]"
+                      name="customer_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\staging\billing.Outputs[Salida de origen de ADO NET].Columns[employee_id]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\staging\billing.Outputs[Salida de origen de ADO NET].ExternalColumns[employee_id]"
+                      lineageId="Package\staging\billing.Outputs[Salida de origen de ADO NET].Columns[employee_id]"
+                      name="employee_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\staging\billing.Outputs[Salida de origen de ADO NET].Columns[product_id]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\staging\billing.Outputs[Salida de origen de ADO NET].ExternalColumns[product_id]"
+                      lineageId="Package\staging\billing.Outputs[Salida de origen de ADO NET].Columns[product_id]"
+                      name="product_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\staging\billing.Outputs[Salida de origen de ADO NET].Columns[quantity]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\staging\billing.Outputs[Salida de origen de ADO NET].ExternalColumns[quantity]"
+                      lineageId="Package\staging\billing.Outputs[Salida de origen de ADO NET].Columns[quantity]"
+                      name="quantity"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\staging\billing.Outputs[Salida de origen de ADO NET].Columns[region]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\staging\billing.Outputs[Salida de origen de ADO NET].ExternalColumns[region]"
+                      length="90"
+                      lineageId="Package\staging\billing.Outputs[Salida de origen de ADO NET].Columns[region]"
+                      name="region"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\staging\billing.Outputs[Salida de origen de ADO NET].ExternalColumns[id]"
+                      dataType="wstr"
+                      length="1"
+                      name="id" />
+                    <externalMetadataColumn
+                      refId="Package\staging\billing.Outputs[Salida de origen de ADO NET].ExternalColumns[billing_id]"
+                      dataType="i4"
+                      name="billing_id" />
+                    <externalMetadataColumn
+                      refId="Package\staging\billing.Outputs[Salida de origen de ADO NET].ExternalColumns[date]"
+                      dataType="dbTimeStamp"
+                      name="date" />
+                    <externalMetadataColumn
+                      refId="Package\staging\billing.Outputs[Salida de origen de ADO NET].ExternalColumns[customer_id]"
+                      dataType="i2"
+                      name="customer_id" />
+                    <externalMetadataColumn
+                      refId="Package\staging\billing.Outputs[Salida de origen de ADO NET].ExternalColumns[employee_id]"
+                      dataType="i2"
+                      name="employee_id" />
+                    <externalMetadataColumn
+                      refId="Package\staging\billing.Outputs[Salida de origen de ADO NET].ExternalColumns[product_id]"
+                      dataType="i2"
+                      name="product_id" />
+                    <externalMetadataColumn
+                      refId="Package\staging\billing.Outputs[Salida de origen de ADO NET].ExternalColumns[quantity]"
+                      dataType="i2"
+                      name="quantity" />
+                    <externalMetadataColumn
+                      refId="Package\staging\billing.Outputs[Salida de origen de ADO NET].ExternalColumns[region]"
+                      dataType="wstr"
+                      length="90"
+                      name="region" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\staging\billing.Outputs[Salida de error de origen de ADO NET]"
+                  isErrorOut="true"
+                  name="Salida de error de origen de ADO NET">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\staging\billing.Outputs[Salida de error de origen de ADO NET].Columns[id]"
+                      dataType="wstr"
+                      length="1"
+                      lineageId="Package\staging\billing.Outputs[Salida de error de origen de ADO NET].Columns[id]"
+                      name="id" />
+                    <outputColumn
+                      refId="Package\staging\billing.Outputs[Salida de error de origen de ADO NET].Columns[billing_id]"
+                      dataType="i4"
+                      lineageId="Package\staging\billing.Outputs[Salida de error de origen de ADO NET].Columns[billing_id]"
+                      name="billing_id" />
+                    <outputColumn
+                      refId="Package\staging\billing.Outputs[Salida de error de origen de ADO NET].Columns[date]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\staging\billing.Outputs[Salida de error de origen de ADO NET].Columns[date]"
+                      name="date" />
+                    <outputColumn
+                      refId="Package\staging\billing.Outputs[Salida de error de origen de ADO NET].Columns[customer_id]"
+                      dataType="i2"
+                      lineageId="Package\staging\billing.Outputs[Salida de error de origen de ADO NET].Columns[customer_id]"
+                      name="customer_id" />
+                    <outputColumn
+                      refId="Package\staging\billing.Outputs[Salida de error de origen de ADO NET].Columns[employee_id]"
+                      dataType="i2"
+                      lineageId="Package\staging\billing.Outputs[Salida de error de origen de ADO NET].Columns[employee_id]"
+                      name="employee_id" />
+                    <outputColumn
+                      refId="Package\staging\billing.Outputs[Salida de error de origen de ADO NET].Columns[product_id]"
+                      dataType="i2"
+                      lineageId="Package\staging\billing.Outputs[Salida de error de origen de ADO NET].Columns[product_id]"
+                      name="product_id" />
+                    <outputColumn
+                      refId="Package\staging\billing.Outputs[Salida de error de origen de ADO NET].Columns[quantity]"
+                      dataType="i2"
+                      lineageId="Package\staging\billing.Outputs[Salida de error de origen de ADO NET].Columns[quantity]"
+                      name="quantity" />
+                    <outputColumn
+                      refId="Package\staging\billing.Outputs[Salida de error de origen de ADO NET].Columns[region]"
+                      dataType="wstr"
+                      length="90"
+                      lineageId="Package\staging\billing.Outputs[Salida de error de origen de ADO NET].Columns[region]"
+                      name="region" />
+                    <outputColumn
+                      refId="Package\staging\billing.Outputs[Salida de error de origen de ADO NET].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\staging\billing.Outputs[Salida de error de origen de ADO NET].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\staging\billing.Outputs[Salida de error de origen de ADO NET].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\staging\billing.Outputs[Salida de error de origen de ADO NET].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\staging\billing_detail"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="Consume datos de SQL Server, OLE DB, ODBC u Oracle mediante el correspondiente proveedor de datos de .NET Framework. Se usa una instrucción Transact-SQL para definir el conjunto de resultados. Por ejemplo, se extraen datos de SQL Server con el proveedor de datos de .NET Framework para SQL Server.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;4"
+              description="Consume datos de SQL Server, OLE DB, ODBC u Oracle mediante el correspondiente proveedor de datos de .NET Framework. Se usa una instrucción Transact-SQL para definir el conjunto de resultados. Por ejemplo, se extraen datos de SQL Server con el proveedor de datos de .NET Framework para SQL Server."
+              name="billing_detail"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Especifica la instrucción SQL utilizada por el componente para extraer datos."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT * FROM billing_detail</property>
+                <property
+                  dataType="System.Int32"
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                  name="CommandTimeout">30</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica si se debe permitir que columnas externas que no sean de cadenas se conviertan implícitamente en cadenas en las columnas de salida."
+                  name="AllowImplicitStringConversion">true</property>
+                <property
+                  dataType="System.String"
+                  description="Nombre de la tabla de la base de datos de origen."
+                  expressionType="Notify"
+                  name="TableOrViewName"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">billing_detail</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especificar el modo de recuperar información de columnas externas"
+                  name="AccessMode"
+                  typeConverter="Microsoft.SqlServer.Dts.Pipeline.DataReaderSourceAdapter+EnumToStringConverter">2</property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">Microsoft.DataReaderSourceAdapter</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\staging\billing_detail.Connections[IDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[src_mysql]"
+                  connectionManagerRefId="Package.ConnectionManagers[src_mysql]"
+                  description="Administrador de conexiones administrado"
+                  name="IDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\staging\billing_detail.Outputs[Salida de origen de ADO NET]"
+                  name="Salida de origen de ADO NET">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\staging\billing_detail.Outputs[Salida de origen de ADO NET].Columns[BILLING_ID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\staging\billing_detail.Outputs[Salida de origen de ADO NET].ExternalColumns[BILLING_ID]"
+                      lineageId="Package\staging\billing_detail.Outputs[Salida de origen de ADO NET].Columns[BILLING_ID]"
+                      name="BILLING_ID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\staging\billing_detail.Outputs[Salida de origen de ADO NET].Columns[PRODUCT_ID]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\staging\billing_detail.Outputs[Salida de origen de ADO NET].ExternalColumns[PRODUCT_ID]"
+                      lineageId="Package\staging\billing_detail.Outputs[Salida de origen de ADO NET].Columns[PRODUCT_ID]"
+                      name="PRODUCT_ID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\staging\billing_detail.Outputs[Salida de origen de ADO NET].Columns[QUANTITY]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\staging\billing_detail.Outputs[Salida de origen de ADO NET].ExternalColumns[QUANTITY]"
+                      lineageId="Package\staging\billing_detail.Outputs[Salida de origen de ADO NET].Columns[QUANTITY]"
+                      name="QUANTITY"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\staging\billing_detail.Outputs[Salida de origen de ADO NET].ExternalColumns[BILLING_ID]"
+                      dataType="i4"
+                      name="BILLING_ID" />
+                    <externalMetadataColumn
+                      refId="Package\staging\billing_detail.Outputs[Salida de origen de ADO NET].ExternalColumns[PRODUCT_ID]"
+                      dataType="i2"
+                      name="PRODUCT_ID" />
+                    <externalMetadataColumn
+                      refId="Package\staging\billing_detail.Outputs[Salida de origen de ADO NET].ExternalColumns[QUANTITY]"
+                      dataType="i2"
+                      name="QUANTITY" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\staging\billing_detail.Outputs[Salida de error de origen de ADO NET]"
+                  isErrorOut="true"
+                  name="Salida de error de origen de ADO NET">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\staging\billing_detail.Outputs[Salida de error de origen de ADO NET].Columns[BILLING_ID]"
+                      dataType="i4"
+                      lineageId="Package\staging\billing_detail.Outputs[Salida de error de origen de ADO NET].Columns[BILLING_ID]"
+                      name="BILLING_ID" />
+                    <outputColumn
+                      refId="Package\staging\billing_detail.Outputs[Salida de error de origen de ADO NET].Columns[PRODUCT_ID]"
+                      dataType="i2"
+                      lineageId="Package\staging\billing_detail.Outputs[Salida de error de origen de ADO NET].Columns[PRODUCT_ID]"
+                      name="PRODUCT_ID" />
+                    <outputColumn
+                      refId="Package\staging\billing_detail.Outputs[Salida de error de origen de ADO NET].Columns[QUANTITY]"
+                      dataType="i2"
+                      lineageId="Package\staging\billing_detail.Outputs[Salida de error de origen de ADO NET].Columns[QUANTITY]"
+                      name="QUANTITY" />
+                    <outputColumn
+                      refId="Package\staging\billing_detail.Outputs[Salida de error de origen de ADO NET].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\staging\billing_detail.Outputs[Salida de error de origen de ADO NET].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\staging\billing_detail.Outputs[Salida de error de origen de ADO NET].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\staging\billing_detail.Outputs[Salida de error de origen de ADO NET].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\staging\Data Conversion"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="Data Conversion"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\staging\Data Conversion.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\staging\Data Conversion.Inputs[Data Conversion Input].Columns[region]"
+                      cachedDataType="wstr"
+                      cachedLength="90"
+                      cachedName="region"
+                      lineageId="Package\staging\billing.Outputs[Salida de origen de ADO NET].Columns[region]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\staging\Data Conversion.Outputs[Data Conversion Output]"
+                  exclusionGroup="1"
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\staging\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\staging\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of region]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="90"
+                      lineageId="Package\staging\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of region]"
+                      name="Copy of region"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\staging\billing.Outputs[Salida de origen de ADO NET].Columns[region]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\staging\Data Conversion.Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\staging\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\staging\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\staging\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\staging\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\staging\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\staging\discounts"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="Consume datos de SQL Server, OLE DB, ODBC u Oracle mediante el correspondiente proveedor de datos de .NET Framework. Se usa una instrucción Transact-SQL para definir el conjunto de resultados. Por ejemplo, se extraen datos de SQL Server con el proveedor de datos de .NET Framework para SQL Server.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;4"
+              description="Consume datos de SQL Server, OLE DB, ODBC u Oracle mediante el correspondiente proveedor de datos de .NET Framework. Se usa una instrucción Transact-SQL para definir el conjunto de resultados. Por ejemplo, se extraen datos de SQL Server con el proveedor de datos de .NET Framework para SQL Server."
+              name="discounts"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Especifica la instrucción SQL utilizada por el componente para extraer datos."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT * FROM discounts</property>
+                <property
+                  dataType="System.Int32"
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                  name="CommandTimeout">30</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica si se debe permitir que columnas externas que no sean de cadenas se conviertan implícitamente en cadenas en las columnas de salida."
+                  name="AllowImplicitStringConversion">true</property>
+                <property
+                  dataType="System.String"
+                  description="Nombre de la tabla de la base de datos de origen."
+                  expressionType="Notify"
+                  name="TableOrViewName"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">discounts</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especificar el modo de recuperar información de columnas externas"
+                  name="AccessMode"
+                  typeConverter="Microsoft.SqlServer.Dts.Pipeline.DataReaderSourceAdapter+EnumToStringConverter">2</property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">Microsoft.DataReaderSourceAdapter</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\staging\discounts.Connections[IDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[src_mysql]"
+                  connectionManagerRefId="Package.ConnectionManagers[src_mysql]"
+                  description="Administrador de conexiones administrado"
+                  name="IDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\staging\discounts.Outputs[Salida de origen de ADO NET]"
+                  name="Salida de origen de ADO NET">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\staging\discounts.Outputs[Salida de origen de ADO NET].Columns[DISCOUNT_ID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\staging\discounts.Outputs[Salida de origen de ADO NET].ExternalColumns[DISCOUNT_ID]"
+                      lineageId="Package\staging\discounts.Outputs[Salida de origen de ADO NET].Columns[DISCOUNT_ID]"
+                      name="DISCOUNT_ID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\staging\discounts.Outputs[Salida de origen de ADO NET].Columns[DATE_FROM]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\staging\discounts.Outputs[Salida de origen de ADO NET].ExternalColumns[DATE_FROM]"
+                      lineageId="Package\staging\discounts.Outputs[Salida de origen de ADO NET].Columns[DATE_FROM]"
+                      name="DATE_FROM"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\staging\discounts.Outputs[Salida de origen de ADO NET].Columns[DATE_UNTIL]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\staging\discounts.Outputs[Salida de origen de ADO NET].ExternalColumns[DATE_UNTIL]"
+                      lineageId="Package\staging\discounts.Outputs[Salida de origen de ADO NET].Columns[DATE_UNTIL]"
+                      name="DATE_UNTIL"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\staging\discounts.Outputs[Salida de origen de ADO NET].Columns[TOTAL_BILLING]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\staging\discounts.Outputs[Salida de origen de ADO NET].ExternalColumns[TOTAL_BILLING]"
+                      lineageId="Package\staging\discounts.Outputs[Salida de origen de ADO NET].Columns[TOTAL_BILLING]"
+                      name="TOTAL_BILLING"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\staging\discounts.Outputs[Salida de origen de ADO NET].Columns[PERCENTAGE]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\staging\discounts.Outputs[Salida de origen de ADO NET].ExternalColumns[PERCENTAGE]"
+                      lineageId="Package\staging\discounts.Outputs[Salida de origen de ADO NET].Columns[PERCENTAGE]"
+                      name="PERCENTAGE"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\staging\discounts.Outputs[Salida de origen de ADO NET].ExternalColumns[DISCOUNT_ID]"
+                      dataType="i4"
+                      name="DISCOUNT_ID" />
+                    <externalMetadataColumn
+                      refId="Package\staging\discounts.Outputs[Salida de origen de ADO NET].ExternalColumns[DATE_FROM]"
+                      dataType="dbTimeStamp"
+                      name="DATE_FROM" />
+                    <externalMetadataColumn
+                      refId="Package\staging\discounts.Outputs[Salida de origen de ADO NET].ExternalColumns[DATE_UNTIL]"
+                      dataType="dbTimeStamp"
+                      name="DATE_UNTIL" />
+                    <externalMetadataColumn
+                      refId="Package\staging\discounts.Outputs[Salida de origen de ADO NET].ExternalColumns[TOTAL_BILLING]"
+                      dataType="r8"
+                      name="TOTAL_BILLING" />
+                    <externalMetadataColumn
+                      refId="Package\staging\discounts.Outputs[Salida de origen de ADO NET].ExternalColumns[PERCENTAGE]"
+                      dataType="i2"
+                      name="PERCENTAGE" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\staging\discounts.Outputs[Salida de error de origen de ADO NET]"
+                  isErrorOut="true"
+                  name="Salida de error de origen de ADO NET">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\staging\discounts.Outputs[Salida de error de origen de ADO NET].Columns[DISCOUNT_ID]"
+                      dataType="i4"
+                      lineageId="Package\staging\discounts.Outputs[Salida de error de origen de ADO NET].Columns[DISCOUNT_ID]"
+                      name="DISCOUNT_ID" />
+                    <outputColumn
+                      refId="Package\staging\discounts.Outputs[Salida de error de origen de ADO NET].Columns[DATE_FROM]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\staging\discounts.Outputs[Salida de error de origen de ADO NET].Columns[DATE_FROM]"
+                      name="DATE_FROM" />
+                    <outputColumn
+                      refId="Package\staging\discounts.Outputs[Salida de error de origen de ADO NET].Columns[DATE_UNTIL]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\staging\discounts.Outputs[Salida de error de origen de ADO NET].Columns[DATE_UNTIL]"
+                      name="DATE_UNTIL" />
+                    <outputColumn
+                      refId="Package\staging\discounts.Outputs[Salida de error de origen de ADO NET].Columns[TOTAL_BILLING]"
+                      dataType="r8"
+                      lineageId="Package\staging\discounts.Outputs[Salida de error de origen de ADO NET].Columns[TOTAL_BILLING]"
+                      name="TOTAL_BILLING" />
+                    <outputColumn
+                      refId="Package\staging\discounts.Outputs[Salida de error de origen de ADO NET].Columns[PERCENTAGE]"
+                      dataType="i2"
+                      lineageId="Package\staging\discounts.Outputs[Salida de error de origen de ADO NET].Columns[PERCENTAGE]"
+                      name="PERCENTAGE" />
+                    <outputColumn
+                      refId="Package\staging\discounts.Outputs[Salida de error de origen de ADO NET].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\staging\discounts.Outputs[Salida de error de origen de ADO NET].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\staging\discounts.Outputs[Salida de error de origen de ADO NET].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\staging\discounts.Outputs[Salida de error de origen de ADO NET].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\staging\OLE DB Destination 1"
               componentClassID="Microsoft.OLEDBDestination"
               contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
               description="OLE DB Destination"
-              name="OLE DB Destination"
+              name="OLE DB Destination 1"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[stg_billing_detail_G06]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\staging\OLE DB Destination 1.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[staging]"
+                  connectionManagerRefId="Package.ConnectionManagers[staging]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\staging\OLE DB Destination 1.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\staging\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[BILLING_ID]"
+                      cachedDataType="i4"
+                      cachedName="BILLING_ID"
+                      externalMetadataColumnId="Package\staging\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[billing_id]"
+                      lineageId="Package\staging\billing_detail.Outputs[Salida de origen de ADO NET].Columns[BILLING_ID]" />
+                    <inputColumn
+                      refId="Package\staging\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[PRODUCT_ID]"
+                      cachedDataType="i2"
+                      cachedName="PRODUCT_ID"
+                      externalMetadataColumnId="Package\staging\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[product_id]"
+                      lineageId="Package\staging\billing_detail.Outputs[Salida de origen de ADO NET].Columns[PRODUCT_ID]" />
+                    <inputColumn
+                      refId="Package\staging\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[QUANTITY]"
+                      cachedDataType="i2"
+                      cachedName="QUANTITY"
+                      externalMetadataColumnId="Package\staging\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[quantity]"
+                      lineageId="Package\staging\billing_detail.Outputs[Salida de origen de ADO NET].Columns[QUANTITY]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\staging\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[billing_id]"
+                      dataType="i4"
+                      name="billing_id" />
+                    <externalMetadataColumn
+                      refId="Package\staging\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[product_id]"
+                      dataType="i4"
+                      name="product_id" />
+                    <externalMetadataColumn
+                      refId="Package\staging\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[quantity]"
+                      dataType="i4"
+                      name="quantity" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\staging\OLE DB Destination 1.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\staging\OLE DB Destination 1.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\staging\OLE DB Destination 1.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\staging\OLE DB Destination 1.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\staging\OLE DB Destination 1.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\staging\OLE DB Destination 1.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\staging\OLE DB Destination 1 1"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination 1 1"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[stg_prices_G06]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\staging\OLE DB Destination 1 1.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[staging]"
+                  connectionManagerRefId="Package.ConnectionManagers[staging]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\staging\OLE DB Destination 1 1.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\staging\OLE DB Destination 1 1.Inputs[OLE DB Destination Input].Columns[PRODUCT_ID]"
+                      cachedDataType="i4"
+                      cachedName="PRODUCT_ID"
+                      externalMetadataColumnId="Package\staging\OLE DB Destination 1 1.Inputs[OLE DB Destination Input].ExternalColumns[product_id]"
+                      lineageId="Package\staging\prices.Outputs[Salida de origen de ADO NET].Columns[PRODUCT_ID]" />
+                    <inputColumn
+                      refId="Package\staging\OLE DB Destination 1 1.Inputs[OLE DB Destination Input].Columns[DATE]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="DATE"
+                      externalMetadataColumnId="Package\staging\OLE DB Destination 1 1.Inputs[OLE DB Destination Input].ExternalColumns[date]"
+                      lineageId="Package\staging\prices.Outputs[Salida de origen de ADO NET].Columns[DATE]" />
+                    <inputColumn
+                      refId="Package\staging\OLE DB Destination 1 1.Inputs[OLE DB Destination Input].Columns[PRICE]"
+                      cachedDataType="r8"
+                      cachedName="PRICE"
+                      externalMetadataColumnId="Package\staging\OLE DB Destination 1 1.Inputs[OLE DB Destination Input].ExternalColumns[price]"
+                      lineageId="Package\staging\prices.Outputs[Salida de origen de ADO NET].Columns[PRICE]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\staging\OLE DB Destination 1 1.Inputs[OLE DB Destination Input].ExternalColumns[product_id]"
+                      dataType="wstr"
+                      length="255"
+                      name="product_id" />
+                    <externalMetadataColumn
+                      refId="Package\staging\OLE DB Destination 1 1.Inputs[OLE DB Destination Input].ExternalColumns[date]"
+                      dataType="wstr"
+                      length="255"
+                      name="date" />
+                    <externalMetadataColumn
+                      refId="Package\staging\OLE DB Destination 1 1.Inputs[OLE DB Destination Input].ExternalColumns[price]"
+                      dataType="wstr"
+                      length="255"
+                      name="price" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\staging\OLE DB Destination 1 1.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\staging\OLE DB Destination 1 1.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\staging\OLE DB Destination 1 1.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\staging\OLE DB Destination 1 1.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\staging\OLE DB Destination 1 1.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\staging\OLE DB Destination 1 1.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\staging\OLE DB Destination 1 2"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination 1 2"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[stg_discounts_G06]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\staging\OLE DB Destination 1 2.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[staging]"
+                  connectionManagerRefId="Package.ConnectionManagers[staging]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\staging\OLE DB Destination 1 2.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\staging\OLE DB Destination 1 2.Inputs[OLE DB Destination Input].Columns[DISCOUNT_ID]"
+                      cachedDataType="i4"
+                      cachedName="DISCOUNT_ID"
+                      externalMetadataColumnId="Package\staging\OLE DB Destination 1 2.Inputs[OLE DB Destination Input].ExternalColumns[discount_id]"
+                      lineageId="Package\staging\discounts.Outputs[Salida de origen de ADO NET].Columns[DISCOUNT_ID]" />
+                    <inputColumn
+                      refId="Package\staging\OLE DB Destination 1 2.Inputs[OLE DB Destination Input].Columns[TOTAL_BILLING]"
+                      cachedDataType="r8"
+                      cachedName="TOTAL_BILLING"
+                      externalMetadataColumnId="Package\staging\OLE DB Destination 1 2.Inputs[OLE DB Destination Input].ExternalColumns[total_billing]"
+                      lineageId="Package\staging\discounts.Outputs[Salida de origen de ADO NET].Columns[TOTAL_BILLING]" />
+                    <inputColumn
+                      refId="Package\staging\OLE DB Destination 1 2.Inputs[OLE DB Destination Input].Columns[PERCENTAGE]"
+                      cachedDataType="i2"
+                      cachedName="PERCENTAGE"
+                      externalMetadataColumnId="Package\staging\OLE DB Destination 1 2.Inputs[OLE DB Destination Input].ExternalColumns[percentage]"
+                      lineageId="Package\staging\discounts.Outputs[Salida de origen de ADO NET].Columns[PERCENTAGE]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\staging\OLE DB Destination 1 2.Inputs[OLE DB Destination Input].ExternalColumns[discount_id]"
+                      dataType="wstr"
+                      length="255"
+                      name="discount_id" />
+                    <externalMetadataColumn
+                      refId="Package\staging\OLE DB Destination 1 2.Inputs[OLE DB Destination Input].ExternalColumns[from]"
+                      dataType="wstr"
+                      length="255"
+                      name="from" />
+                    <externalMetadataColumn
+                      refId="Package\staging\OLE DB Destination 1 2.Inputs[OLE DB Destination Input].ExternalColumns[until]"
+                      dataType="wstr"
+                      length="255"
+                      name="until" />
+                    <externalMetadataColumn
+                      refId="Package\staging\OLE DB Destination 1 2.Inputs[OLE DB Destination Input].ExternalColumns[total_billing]"
+                      dataType="wstr"
+                      length="255"
+                      name="total_billing" />
+                    <externalMetadataColumn
+                      refId="Package\staging\OLE DB Destination 1 2.Inputs[OLE DB Destination Input].ExternalColumns[percentage]"
+                      dataType="wstr"
+                      length="255"
+                      name="percentage" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\staging\OLE DB Destination 1 2.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\staging\OLE DB Destination 1 2.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\staging\OLE DB Destination 1 2.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\staging\OLE DB Destination 1 2.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\staging\OLE DB Destination 1 2.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\staging\OLE DB Destination 1 2.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\staging\OLE DB Destination 1 3"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination 1 3"
               usesDispositions="true"
               version="4">
               <properties>
@@ -320,103 +1303,104 @@
               </properties>
               <connections>
                 <connection
-                  refId="Package\Data Flow Task\OLE DB Destination.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[TotoLENOVO\SQLEXPRESS.bd_staging_2026_G06]"
-                  connectionManagerRefId="Package.ConnectionManagers[TotoLENOVO\SQLEXPRESS.bd_staging_2026_G06]"
+                  refId="Package\staging\OLE DB Destination 1 3.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[staging]"
+                  connectionManagerRefId="Package.ConnectionManagers[staging]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
               <inputs>
                 <input
-                  refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  refId="Package\staging\OLE DB Destination 1 3.Inputs[OLE DB Destination Input]"
                   errorOrTruncationOperation="Insert"
                   errorRowDisposition="FailComponent"
                   hasSideEffects="true"
                   name="OLE DB Destination Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[id]"
-                      cachedDataType="i4"
+                      refId="Package\staging\OLE DB Destination 1 3.Inputs[OLE DB Destination Input].Columns[id]"
+                      cachedDataType="wstr"
+                      cachedLength="1"
                       cachedName="id"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[id]"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[id]" />
+                      externalMetadataColumnId="Package\staging\OLE DB Destination 1 3.Inputs[OLE DB Destination Input].ExternalColumns[id]"
+                      lineageId="Package\staging\billing.Outputs[Salida de origen de ADO NET].Columns[id]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[billing_id]"
+                      refId="Package\staging\OLE DB Destination 1 3.Inputs[OLE DB Destination Input].Columns[billing_id]"
                       cachedDataType="i4"
                       cachedName="billing_id"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[billing_id]"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[billing_id]" />
+                      externalMetadataColumnId="Package\staging\OLE DB Destination 1 3.Inputs[OLE DB Destination Input].ExternalColumns[billing_id]"
+                      lineageId="Package\staging\billing.Outputs[Salida de origen de ADO NET].Columns[billing_id]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[date]"
+                      refId="Package\staging\OLE DB Destination 1 3.Inputs[OLE DB Destination Input].Columns[date]"
                       cachedDataType="dbTimeStamp"
                       cachedName="date"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[date]"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[date]" />
+                      externalMetadataColumnId="Package\staging\OLE DB Destination 1 3.Inputs[OLE DB Destination Input].ExternalColumns[date]"
+                      lineageId="Package\staging\billing.Outputs[Salida de origen de ADO NET].Columns[date]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[customer_id]"
-                      cachedDataType="i4"
+                      refId="Package\staging\OLE DB Destination 1 3.Inputs[OLE DB Destination Input].Columns[customer_id]"
+                      cachedDataType="i2"
                       cachedName="customer_id"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[customer_id]"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[customer_id]" />
+                      externalMetadataColumnId="Package\staging\OLE DB Destination 1 3.Inputs[OLE DB Destination Input].ExternalColumns[customer_id]"
+                      lineageId="Package\staging\billing.Outputs[Salida de origen de ADO NET].Columns[customer_id]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[employee_id]"
-                      cachedDataType="i4"
+                      refId="Package\staging\OLE DB Destination 1 3.Inputs[OLE DB Destination Input].Columns[employee_id]"
+                      cachedDataType="i2"
                       cachedName="employee_id"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[employee_id]"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[employee_id]" />
+                      externalMetadataColumnId="Package\staging\OLE DB Destination 1 3.Inputs[OLE DB Destination Input].ExternalColumns[employee_id]"
+                      lineageId="Package\staging\billing.Outputs[Salida de origen de ADO NET].Columns[employee_id]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[product_id]"
-                      cachedDataType="i4"
+                      refId="Package\staging\OLE DB Destination 1 3.Inputs[OLE DB Destination Input].Columns[product_id]"
+                      cachedDataType="i2"
                       cachedName="product_id"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[product_id]"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[product_id]" />
+                      externalMetadataColumnId="Package\staging\OLE DB Destination 1 3.Inputs[OLE DB Destination Input].ExternalColumns[product_id]"
+                      lineageId="Package\staging\billing.Outputs[Salida de origen de ADO NET].Columns[product_id]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[quantity]"
-                      cachedDataType="i4"
+                      refId="Package\staging\OLE DB Destination 1 3.Inputs[OLE DB Destination Input].Columns[quantity]"
+                      cachedDataType="i2"
                       cachedName="quantity"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[quantity]"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[quantity]" />
+                      externalMetadataColumnId="Package\staging\OLE DB Destination 1 3.Inputs[OLE DB Destination Input].ExternalColumns[quantity]"
+                      lineageId="Package\staging\billing.Outputs[Salida de origen de ADO NET].Columns[quantity]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[region]"
+                      refId="Package\staging\OLE DB Destination 1 3.Inputs[OLE DB Destination Input].Columns[Copy of region]"
                       cachedCodepage="1252"
                       cachedDataType="str"
-                      cachedLength="45"
-                      cachedName="region"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[region]"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[region]" />
+                      cachedLength="90"
+                      cachedName="Copy of region"
+                      externalMetadataColumnId="Package\staging\OLE DB Destination 1 3.Inputs[OLE DB Destination Input].ExternalColumns[region]"
+                      lineageId="Package\staging\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of region]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[id]"
+                      refId="Package\staging\OLE DB Destination 1 3.Inputs[OLE DB Destination Input].ExternalColumns[id]"
                       dataType="i4"
                       name="id" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[billing_id]"
+                      refId="Package\staging\OLE DB Destination 1 3.Inputs[OLE DB Destination Input].ExternalColumns[billing_id]"
                       dataType="i4"
                       name="billing_id" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[date]"
+                      refId="Package\staging\OLE DB Destination 1 3.Inputs[OLE DB Destination Input].ExternalColumns[date]"
                       dataType="dbTimeStamp"
                       name="date" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[customer_id]"
+                      refId="Package\staging\OLE DB Destination 1 3.Inputs[OLE DB Destination Input].ExternalColumns[customer_id]"
                       dataType="i4"
                       name="customer_id" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[employee_id]"
+                      refId="Package\staging\OLE DB Destination 1 3.Inputs[OLE DB Destination Input].ExternalColumns[employee_id]"
                       dataType="i4"
                       name="employee_id" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[product_id]"
+                      refId="Package\staging\OLE DB Destination 1 3.Inputs[OLE DB Destination Input].ExternalColumns[product_id]"
                       dataType="i4"
                       name="product_id" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[quantity]"
+                      refId="Package\staging\OLE DB Destination 1 3.Inputs[OLE DB Destination Input].ExternalColumns[quantity]"
                       dataType="i4"
                       name="quantity" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[region]"
+                      refId="Package\staging\OLE DB Destination 1 3.Inputs[OLE DB Destination Input].ExternalColumns[region]"
                       codePage="1252"
                       dataType="str"
                       length="45"
@@ -426,22 +1410,22 @@
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  refId="Package\staging\OLE DB Destination 1 3.Outputs[OLE DB Destination Error Output]"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="OLE DB Destination Error Output"
-                  synchronousInputId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  synchronousInputId="Package\staging\OLE DB Destination 1 3.Inputs[OLE DB Destination Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      refId="Package\staging\OLE DB Destination 1 3.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      lineageId="Package\staging\OLE DB Destination 1 3.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      refId="Package\staging\OLE DB Destination 1 3.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\staging\OLE DB Destination 1 3.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -450,236 +1434,130 @@
               </outputs>
             </component>
             <component
-              refId="Package\Data Flow Task\OLE DB Source"
-              componentClassID="Microsoft.OLEDBSource"
-              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
-              description="OLE DB Source"
-              name="OLE DB Source"
+              refId="Package\staging\prices"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="Consume datos de SQL Server, OLE DB, ODBC u Oracle mediante el correspondiente proveedor de datos de .NET Framework. Se usa una instrucción Transact-SQL para definir el conjunto de resultados. Por ejemplo, se extraen datos de SQL Server con el proveedor de datos de .NET Framework para SQL Server.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;4"
+              description="Consume datos de SQL Server, OLE DB, ODBC u Oracle mediante el correspondiente proveedor de datos de .NET Framework. Se usa una instrucción Transact-SQL para definir el conjunto de resultados. Por ejemplo, se extraen datos de SQL Server con el proveedor de datos de .NET Framework para SQL Server."
+              name="prices"
               usesDispositions="true"
-              version="7">
+              version="4">
               <properties>
                 <property
-                  dataType="System.Int32"
-                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
-                  name="CommandTimeout">0</property>
-                <property
                   dataType="System.String"
-                  description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[dbo].[Billing]</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies the variable that contains the name of the database object used to open a rowset."
-                  name="OpenRowsetVariable"></property>
-                <property
-                  dataType="System.String"
-                  description="The SQL command to be executed."
+                  description="Especifica la instrucción SQL utilizada por el componente para extraer datos."
+                  expressionType="Notify"
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
-                <property
-                  dataType="System.String"
-                  description="The variable that contains the SQL command to be executed."
-                  name="SqlCommandVariable"></property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT * FROM prices</property>
                 <property
                   dataType="System.Int32"
-                  description="Specifies the column code page to use when code page information is unavailable from the data source."
-                  name="DefaultCodePage">1252</property>
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                  name="CommandTimeout">30</property>
                 <property
                   dataType="System.Boolean"
-                  description="Forces the use of the DefaultCodePage property value when describing character data."
-                  name="AlwaysUseDefaultCodePage">false</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the mode used to access the database."
-                  name="AccessMode"
-                  typeConverter="AccessMode">0</property>
+                  description="Indica si se debe permitir que columnas externas que no sean de cadenas se conviertan implícitamente en cadenas en las columnas de salida."
+                  name="AllowImplicitStringConversion">true</property>
                 <property
                   dataType="System.String"
-                  description="The mappings between the parameters in the SQL command and variables."
-                  name="ParameterMapping"></property>
+                  description="Nombre de la tabla de la base de datos de origen."
+                  expressionType="Notify"
+                  name="TableOrViewName"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">prices</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especificar el modo de recuperar información de columnas externas"
+                  name="AccessMode"
+                  typeConverter="Microsoft.SqlServer.Dts.Pipeline.DataReaderSourceAdapter+EnumToStringConverter">2</property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">Microsoft.DataReaderSourceAdapter</property>
               </properties>
               <connections>
                 <connection
-                  refId="Package\Data Flow Task\OLE DB Source.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[server-tuia.database.windows.net.TDChistorySales1.alumno]"
-                  connectionManagerRefId="Package.ConnectionManagers[server-tuia.database.windows.net.TDChistorySales1.alumno]"
-                  description="The OLE DB runtime connection used to access the database."
-                  name="OleDbConnection" />
+                  refId="Package\staging\prices.Connections[IDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[src_mysql]"
+                  connectionManagerRefId="Package.ConnectionManagers[src_mysql]"
+                  description="Administrador de conexiones administrado"
+                  name="IDbConnection" />
               </connections>
               <outputs>
                 <output
-                  refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output]"
-                  name="OLE DB Source Output">
+                  refId="Package\staging\prices.Outputs[Salida de origen de ADO NET]"
+                  name="Salida de origen de ADO NET">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[id]"
+                      refId="Package\staging\prices.Outputs[Salida de origen de ADO NET].Columns[PRODUCT_ID]"
                       dataType="i4"
-                      errorOrTruncationOperation="Conversion"
+                      errorOrTruncationOperation="Conversión"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[id]"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[id]"
-                      name="id"
+                      externalMetadataColumnId="Package\staging\prices.Outputs[Salida de origen de ADO NET].ExternalColumns[PRODUCT_ID]"
+                      lineageId="Package\staging\prices.Outputs[Salida de origen de ADO NET].Columns[PRODUCT_ID]"
+                      name="PRODUCT_ID"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[billing_id]"
-                      dataType="i4"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[billing_id]"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[billing_id]"
-                      name="billing_id"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[date]"
+                      refId="Package\staging\prices.Outputs[Salida de origen de ADO NET].Columns[DATE]"
                       dataType="dbTimeStamp"
-                      errorOrTruncationOperation="Conversion"
+                      errorOrTruncationOperation="Conversión"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[date]"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[date]"
-                      name="date"
+                      externalMetadataColumnId="Package\staging\prices.Outputs[Salida de origen de ADO NET].ExternalColumns[DATE]"
+                      lineageId="Package\staging\prices.Outputs[Salida de origen de ADO NET].Columns[DATE]"
+                      name="DATE"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[customer_id]"
-                      dataType="i4"
-                      errorOrTruncationOperation="Conversion"
+                      refId="Package\staging\prices.Outputs[Salida de origen de ADO NET].Columns[PRICE]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversión"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[customer_id]"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[customer_id]"
-                      name="customer_id"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[employee_id]"
-                      dataType="i4"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[employee_id]"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[employee_id]"
-                      name="employee_id"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[product_id]"
-                      dataType="i4"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[product_id]"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[product_id]"
-                      name="product_id"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[quantity]"
-                      dataType="i4"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[quantity]"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[quantity]"
-                      name="quantity"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[region]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[region]"
-                      length="45"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[region]"
-                      name="region"
+                      externalMetadataColumnId="Package\staging\prices.Outputs[Salida de origen de ADO NET].ExternalColumns[PRICE]"
+                      lineageId="Package\staging\prices.Outputs[Salida de origen de ADO NET].Columns[PRICE]"
+                      name="PRICE"
                       truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[id]"
+                      refId="Package\staging\prices.Outputs[Salida de origen de ADO NET].ExternalColumns[PRODUCT_ID]"
                       dataType="i4"
-                      name="id" />
+                      name="PRODUCT_ID" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[billing_id]"
-                      dataType="i4"
-                      name="billing_id" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[date]"
+                      refId="Package\staging\prices.Outputs[Salida de origen de ADO NET].ExternalColumns[DATE]"
                       dataType="dbTimeStamp"
-                      name="date" />
+                      name="DATE" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[customer_id]"
-                      dataType="i4"
-                      name="customer_id" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[employee_id]"
-                      dataType="i4"
-                      name="employee_id" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[product_id]"
-                      dataType="i4"
-                      name="product_id" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[quantity]"
-                      dataType="i4"
-                      name="quantity" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[region]"
-                      codePage="1252"
-                      dataType="str"
-                      length="45"
-                      name="region" />
+                      refId="Package\staging\prices.Outputs[Salida de origen de ADO NET].ExternalColumns[PRICE]"
+                      dataType="r8"
+                      name="PRICE" />
                   </externalMetadataColumns>
                 </output>
                 <output
-                  refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                  refId="Package\staging\prices.Outputs[Salida de error de origen de ADO NET]"
                   isErrorOut="true"
-                  name="OLE DB Source Error Output">
+                  name="Salida de error de origen de ADO NET">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[id]"
+                      refId="Package\staging\prices.Outputs[Salida de error de origen de ADO NET].Columns[PRODUCT_ID]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[id]"
-                      name="id" />
+                      lineageId="Package\staging\prices.Outputs[Salida de error de origen de ADO NET].Columns[PRODUCT_ID]"
+                      name="PRODUCT_ID" />
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[billing_id]"
-                      dataType="i4"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[billing_id]"
-                      name="billing_id" />
-                    <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[date]"
+                      refId="Package\staging\prices.Outputs[Salida de error de origen de ADO NET].Columns[DATE]"
                       dataType="dbTimeStamp"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[date]"
-                      name="date" />
+                      lineageId="Package\staging\prices.Outputs[Salida de error de origen de ADO NET].Columns[DATE]"
+                      name="DATE" />
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[customer_id]"
+                      refId="Package\staging\prices.Outputs[Salida de error de origen de ADO NET].Columns[PRICE]"
+                      dataType="r8"
+                      lineageId="Package\staging\prices.Outputs[Salida de error de origen de ADO NET].Columns[PRICE]"
+                      name="PRICE" />
+                    <outputColumn
+                      refId="Package\staging\prices.Outputs[Salida de error de origen de ADO NET].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[customer_id]"
-                      name="customer_id" />
-                    <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[employee_id]"
-                      dataType="i4"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[employee_id]"
-                      name="employee_id" />
-                    <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[product_id]"
-                      dataType="i4"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[product_id]"
-                      name="product_id" />
-                    <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[quantity]"
-                      dataType="i4"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[quantity]"
-                      name="quantity" />
-                    <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[region]"
-                      codePage="1252"
-                      dataType="str"
-                      length="45"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[region]"
-                      name="region" />
-                    <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      lineageId="Package\staging\prices.Outputs[Salida de error de origen de ADO NET].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      refId="Package\staging\prices.Outputs[Salida de error de origen de ADO NET].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\staging\prices.Outputs[Salida de error de origen de ADO NET].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -690,29 +1568,49 @@
           </components>
           <paths>
             <path
-              refId="Package\Data Flow Task.Paths[OLE DB Source Output]"
-              endId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]"
-              name="OLE DB Source Output"
-              startId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output]" />
+              refId="Package\staging.Paths[Data Conversion Output]"
+              endId="Package\staging\OLE DB Destination 1 3.Inputs[OLE DB Destination Input]"
+              name="Data Conversion Output"
+              startId="Package\staging\Data Conversion.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\staging.Paths[Salida de origen de ADO NET]"
+              endId="Package\staging\OLE DB Destination 1.Inputs[OLE DB Destination Input]"
+              name="Salida de origen de ADO NET"
+              startId="Package\staging\billing_detail.Outputs[Salida de origen de ADO NET]" />
+            <path
+              refId="Package\staging.Paths[Salida de origen de ADO NET1]"
+              endId="Package\staging\OLE DB Destination 1 1.Inputs[OLE DB Destination Input]"
+              name="Salida de origen de ADO NET"
+              startId="Package\staging\prices.Outputs[Salida de origen de ADO NET]" />
+            <path
+              refId="Package\staging.Paths[Salida de origen de ADO NET2]"
+              endId="Package\staging\OLE DB Destination 1 2.Inputs[OLE DB Destination Input]"
+              name="Salida de origen de ADO NET"
+              startId="Package\staging\discounts.Outputs[Salida de origen de ADO NET]" />
+            <path
+              refId="Package\staging.Paths[Salida de origen de ADO NET3]"
+              endId="Package\staging\Data Conversion.Inputs[Data Conversion Input]"
+              name="Salida de origen de ADO NET"
+              startId="Package\staging\billing.Outputs[Salida de origen de ADO NET]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
-      DTS:refId="Package\Truncar tabla regiones"
+      DTS:refId="Package\Truncar tablas billing, billing_detail, prices, y discounts"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Tarea Ejecutar SQL"
       DTS:DTSID="{7A7C70B2-03B0-4BF6-80F7-AE624A4CEB40}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Truncar tabla regiones"
+      DTS:ObjectName="Truncar tablas billing, billing_detail, prices, y discounts"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
       DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{6BEF45B3-1A6F-44BD-962D-43CF9E5C53F5}"
-          SQLTask:SqlStatementSource="TRUNCATE TABLE [dbo].[stg_regiones_G06];" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:SqlStatementSource="TRUNCATE TABLE stg_billing_G06;&#xA; TRUNCATE TABLE stg_discounts_G06;&#xA; TRUNCATE TABLE stg_prices_G06;&#xA; TRUNCATE TABLE stg_billing_detail_G06;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
   </DTS:Executables>
@@ -721,10 +1619,10 @@
       DTS:refId="Package.PrecedenceConstraints[Restricción]"
       DTS:CreationName=""
       DTS:DTSID="{2987484E-8619-4B65-A1C9-89C1774A295D}"
-      DTS:From="Package\Truncar tabla regiones"
+      DTS:From="Package\Truncar tablas billing, billing_detail, prices, y discounts"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Restricción"
-      DTS:To="Package\Data Flow Task" />
+      DTS:To="Package\staging" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--Esta sección CDATA contiene la información de diseño del paquete. Esta sección incluye información como, por ejemplo, las coordenadas (x,y), el ancho y el alto.-->
@@ -739,39 +1637,39 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="150.4,41.6"
-          Id="Package\Data Flow Task"
-          TopLeft="361.666646906072,215.799998499354" />
+          Size="112,41.6"
+          Id="Package\staging"
+          TopLeft="304.999983335535,175.933332109915" />
         <NodeLayout
-          Size="182.4,41.6"
-          Id="Package\Truncar tabla regiones"
-          TopLeft="244.166653325989,57.1999996022383" />
+          Size="328.8,41.6"
+          Id="Package\Truncar tablas billing, billing_detail, prices, y discounts"
+          TopLeft="78.3333290533891,45.0666663532787" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Restricción]"
-          TopLeft="335.366653325989,98.7999996022383">
+          TopLeft="242.733329053389,86.6666663532787">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="101.499993580083,116.999998897116"
+              EndConnector="118.266654282146,89.2666657566365"
               Start="0,0"
-              End="101.499993580083,109.499998897116">
+              End="118.266654282146,81.7666657566365">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,54.4999994485578" />
+                    End="0,40.6333328783182" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,54.4999994485578"
-                    Point2="0,58.4999994485578"
-                    Point3="4,58.4999994485578" />
+                    Point1="0,40.6333328783182"
+                    Point2="0,44.6333328783182"
+                    Point3="4,44.6333328783182" />
                   <mssgle:LineSegment
-                    End="97.499993580083,58.4999994485578" />
+                    End="114.266654282146,44.6333328783182" />
                   <mssgle:CubicBezierSegment
-                    Point1="97.499993580083,58.4999994485578"
-                    Point2="101.499993580083,58.4999994485578"
-                    Point3="101.499993580083,62.4999994485578" />
+                    Point1="114.266654282146,44.6333328783182"
+                    Point2="118.266654282146,44.6333328783182"
+                    Point3="118.266654282146,48.6333328783182" />
                   <mssgle:LineSegment
-                    End="101.499993580083,109.499998897116" />
+                    End="118.266654282146,81.7666657566365" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -784,32 +1682,208 @@
     </LayoutInfo>
   </Package>
   <TaskHost
-    design-time-name="Package\Data Flow Task">
+    design-time-name="Package\staging">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="171.2,41.6"
-          Id="Package\Data Flow Task\OLE DB Destination"
-          TopLeft="305.833316623338,229.666665069593" />
+          Size="188.8,41.6"
+          Id="Package\staging\OLE DB Destination 1 3"
+          TopLeft="109.999993989865,298.799997938871" />
         <NodeLayout
-          Size="152,41.6"
-          Id="Package\Data Flow Task\OLE DB Source"
-          TopLeft="313.333316213556,79.7333327788777" />
+          Size="106.4,41.6"
+          Id="Package\staging\prices"
+          TopLeft="561.566636115148,88.800000795523" />
+        <NodeLayout
+          Size="180,41.6"
+          Id="Package\staging\OLE DB Destination 1"
+          TopLeft="362.499980193875,233.333332417276" />
+        <NodeLayout
+          Size="156,41.6"
+          Id="Package\staging\Data Conversion"
+          TopLeft="80.8333289167949,181.999998734395" />
+        <NodeLayout
+          Size="180,41.6"
+          Id="Package\staging\OLE DB Destination 1 2"
+          TopLeft="794.13329435852,231.799999801119" />
+        <NodeLayout
+          Size="136,41.6"
+          Id="Package\staging\billing_detail"
+          TopLeft="330.733315393992,84.0666660820776" />
+        <NodeLayout
+          Size="105.6,41.6"
+          Id="Package\staging\billing"
+          TopLeft="77.3999959021811,78.4000008678435" />
+        <NodeLayout
+          Size="122.4,41.6"
+          Id="Package\staging\discounts"
+          TopLeft="742.399959568184,92.2666674380828" />
+        <NodeLayout
+          Size="180,41.6"
+          Id="Package\staging\OLE DB Destination 1 1"
+          TopLeft="570.733302280971,230.933333140479" />
         <EdgeLayout
-          Id="Package\Data Flow Task.Paths[OLE DB Source Output]"
-          TopLeft="390.383316418447,121.333332778878">
+          Id="Package\staging.Paths[Salida de origen de ADO NET3]"
+          TopLeft="130.199995902181,120.000000867844">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,108.333332290715"
+              EndConnector="28.6333330146138,61.9999978665512"
               Start="0,0"
-              End="0,100.833332290715">
+              End="28.6333330146138,54.4999978665512">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,100.833332290715" />
+                    End="0,26.9999989332756" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,26.9999989332756"
+                    Point2="0,30.9999989332756"
+                    Point3="4,30.9999989332756" />
+                  <mssgle:LineSegment
+                    End="24.6333330146138,30.9999989332756" />
+                  <mssgle:CubicBezierSegment
+                    Point1="24.6333330146138,30.9999989332756"
+                    Point2="28.6333330146138,30.9999989332756"
+                    Point3="28.6333330146138,34.9999989332756" />
+                  <mssgle:LineSegment
+                    End="28.6333330146138,54.4999978665512" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\staging.Paths[Salida de origen de ADO NET2]"
+          TopLeft="803.599959568184,133.866667438083">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="80.5333347903355,97.9333323630359"
+              Start="0,0"
+              End="80.5333347903355,90.4333323630359">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,44.966666181518" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,44.966666181518"
+                    Point2="0,48.966666181518"
+                    Point3="4,48.966666181518" />
+                  <mssgle:LineSegment
+                    End="76.5333347903355,48.966666181518" />
+                  <mssgle:CubicBezierSegment
+                    Point1="76.5333347903355,48.966666181518"
+                    Point2="80.5333347903355,48.966666181518"
+                    Point3="80.5333347903355,52.966666181518" />
+                  <mssgle:LineSegment
+                    End="80.5333347903355,90.4333323630359" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\staging.Paths[Salida de origen de ADO NET1]"
+          TopLeft="614.766636115148,130.400000795523">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="45.9666661658222,100.533332344956"
+              Start="0,0"
+              End="45.9666661658222,93.0333323449558">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,46.2666661724779" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,46.2666661724779"
+                    Point2="0,50.2666661724779"
+                    Point3="4,50.2666661724779" />
+                  <mssgle:LineSegment
+                    End="41.9666661658222,50.2666661724779" />
+                  <mssgle:CubicBezierSegment
+                    Point1="41.9666661658222,50.2666661724779"
+                    Point2="45.9666661658222,50.2666661724779"
+                    Point3="45.9666661658222,54.2666661724779" />
+                  <mssgle:LineSegment
+                    End="45.9666661658222,93.0333323449558" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\staging.Paths[Salida de origen de ADO NET]"
+          TopLeft="398.733315393992,125.666666082078">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="53.766664799883,107.666666335198"
+              Start="0,0"
+              End="53.766664799883,100.166666335198">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,49.8333331675992" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,49.8333331675992"
+                    Point2="0,53.8333331675992"
+                    Point3="4,53.8333331675992" />
+                  <mssgle:LineSegment
+                    End="49.766664799883,53.8333331675992" />
+                  <mssgle:CubicBezierSegment
+                    Point1="49.766664799883,53.8333331675992"
+                    Point2="53.766664799883,53.8333331675992"
+                    Point3="53.766664799883,57.8333331675992" />
+                  <mssgle:LineSegment
+                    End="53.766664799883,100.166666335198" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\staging.Paths[Data Conversion Output]"
+          TopLeft="158.833328916795,223.599998734395">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="45.5666650730705,75.1999992044764"
+              Start="0,0"
+              End="45.5666650730705,67.6999992044764">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,33.5999996022382" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,33.5999996022382"
+                    Point2="0,37.5999996022382"
+                    Point3="4,37.5999996022382" />
+                  <mssgle:LineSegment
+                    End="41.5666650730705,37.5999996022382" />
+                  <mssgle:CubicBezierSegment
+                    Point1="41.5666650730705,37.5999996022382"
+                    Point2="45.5666650730705,37.5999996022382"
+                    Point3="45.5666650730705,41.5999996022382" />
+                  <mssgle:LineSegment
+                    End="45.5666650730705,67.6999992044764" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -822,7 +1896,7 @@
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task\OLE DB Destination">
+    design-time-name="Package\staging\OLE DB Destination 1 3">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -835,7 +1909,65 @@
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task\OLE DB Source">
+    design-time-name="Package\staging\prices">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\staging\OLE DB Destination 1">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\staging\OLE DB Destination 1 2">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\staging\billing_detail">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\staging\billing">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\staging\discounts">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\staging\OLE DB Destination 1 1">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>

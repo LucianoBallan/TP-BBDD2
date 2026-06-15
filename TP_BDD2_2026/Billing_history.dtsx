@@ -1,0 +1,621 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="6/12/2026 8:05:36 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="TOTOLENOVO"
+  DTS:CreatorName="TOTOLENOVO\totor"
+  DTS:DTSID="{AFC4F31A-C03F-44C5-B642-C805562078CF}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5685.2"
+  DTS:LocaleID="11274"
+  DTS:ObjectName="Billing_history"
+  DTS:PackageType="5"
+  DTS:VersionBuild="7"
+  DTS:VersionGUID="{1A43F28E-3591-4131-A77B-D0BD4FDAE47F}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[src_sqlserver]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{2311474B-D892-45B4-ACAD-CF1ABB1E7A51}"
+      DTS:ObjectName="src_sqlserver">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=server-tuia.database.windows.net;User ID=alumno;Initial Catalog=TDChistorySales2;Provider=MSOLEDBSQL.1;Persist Security Info=True;Auto Translate=False;Application Name=SSIS-Dim-billing-{2311474B-D892-45B4-ACAD-CF1ABB1E7A51}server-tuia.database.windows.net.TDChistorySales1.alumno;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAbyZSC5L5HUSXwBjgTDTfAAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAATjOZDQNx0rh+AZOuec0tbelKOZMbNgxzEPBl4dug0igAAAAAOgAAAAAIAACAAAAB9KeZ6eID1SEN3QkVbAvIQiVyf2r1lRwN9Y3wJxde0riAAAACKbAEXgl9YNzXbaWyutq9G1Lz5XdbqT2OPUY6hqhLG+0AAAABN7/WMpzVXB+HNDTALpCh7+6cwvGddWdR+Qj87W5p/76QFnkANxD3/OoXP19Z9LJ167SoKs0JCAq3XA5bZJufM</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[staging]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{6BEF45B3-1A6F-44BD-962D-43CF9E5C53F5}"
+      DTS:ObjectName="staging">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=TotoLENOVO\SQLEXPRESS;Initial Catalog=bd_staging_2026_G06;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-Dim-productos-{6BEF45B3-1A6F-44BD-962D-43CF9E5C53F5}TotoLENOVO\SQLEXPRESS.bd_staging_2026_G06;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Cargar billing_history"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{3CE1E91C-1DD9-4D0C-8355-C5F75F73DC3F}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Cargar billing_history"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Cargar billing_history\billing_history"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="billing_history"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Billing]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT id, billing_id, date, customer_id, employee_id, product_id, quantity
+  FROM Billing</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Cargar billing_history\billing_history.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[src_sqlserver]"
+                  connectionManagerRefId="Package.ConnectionManagers[src_sqlserver]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Cargar billing_history\billing_history.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Cargar billing_history\billing_history.Outputs[OLE DB Source Output].Columns[id]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Cargar billing_history\billing_history.Outputs[OLE DB Source Output].ExternalColumns[id]"
+                      lineageId="Package\Cargar billing_history\billing_history.Outputs[OLE DB Source Output].Columns[id]"
+                      name="id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Cargar billing_history\billing_history.Outputs[OLE DB Source Output].Columns[billing_id]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Cargar billing_history\billing_history.Outputs[OLE DB Source Output].ExternalColumns[billing_id]"
+                      lineageId="Package\Cargar billing_history\billing_history.Outputs[OLE DB Source Output].Columns[billing_id]"
+                      name="billing_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Cargar billing_history\billing_history.Outputs[OLE DB Source Output].Columns[date]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Cargar billing_history\billing_history.Outputs[OLE DB Source Output].ExternalColumns[date]"
+                      lineageId="Package\Cargar billing_history\billing_history.Outputs[OLE DB Source Output].Columns[date]"
+                      name="date"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Cargar billing_history\billing_history.Outputs[OLE DB Source Output].Columns[customer_id]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Cargar billing_history\billing_history.Outputs[OLE DB Source Output].ExternalColumns[customer_id]"
+                      lineageId="Package\Cargar billing_history\billing_history.Outputs[OLE DB Source Output].Columns[customer_id]"
+                      name="customer_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Cargar billing_history\billing_history.Outputs[OLE DB Source Output].Columns[employee_id]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Cargar billing_history\billing_history.Outputs[OLE DB Source Output].ExternalColumns[employee_id]"
+                      lineageId="Package\Cargar billing_history\billing_history.Outputs[OLE DB Source Output].Columns[employee_id]"
+                      name="employee_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Cargar billing_history\billing_history.Outputs[OLE DB Source Output].Columns[product_id]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Cargar billing_history\billing_history.Outputs[OLE DB Source Output].ExternalColumns[product_id]"
+                      lineageId="Package\Cargar billing_history\billing_history.Outputs[OLE DB Source Output].Columns[product_id]"
+                      name="product_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Cargar billing_history\billing_history.Outputs[OLE DB Source Output].Columns[quantity]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Cargar billing_history\billing_history.Outputs[OLE DB Source Output].ExternalColumns[quantity]"
+                      lineageId="Package\Cargar billing_history\billing_history.Outputs[OLE DB Source Output].Columns[quantity]"
+                      name="quantity"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Cargar billing_history\billing_history.Outputs[OLE DB Source Output].ExternalColumns[id]"
+                      dataType="i4"
+                      name="id" />
+                    <externalMetadataColumn
+                      refId="Package\Cargar billing_history\billing_history.Outputs[OLE DB Source Output].ExternalColumns[billing_id]"
+                      dataType="i4"
+                      name="billing_id" />
+                    <externalMetadataColumn
+                      refId="Package\Cargar billing_history\billing_history.Outputs[OLE DB Source Output].ExternalColumns[date]"
+                      dataType="dbTimeStamp"
+                      name="date" />
+                    <externalMetadataColumn
+                      refId="Package\Cargar billing_history\billing_history.Outputs[OLE DB Source Output].ExternalColumns[customer_id]"
+                      dataType="i4"
+                      name="customer_id" />
+                    <externalMetadataColumn
+                      refId="Package\Cargar billing_history\billing_history.Outputs[OLE DB Source Output].ExternalColumns[employee_id]"
+                      dataType="i4"
+                      name="employee_id" />
+                    <externalMetadataColumn
+                      refId="Package\Cargar billing_history\billing_history.Outputs[OLE DB Source Output].ExternalColumns[product_id]"
+                      dataType="i4"
+                      name="product_id" />
+                    <externalMetadataColumn
+                      refId="Package\Cargar billing_history\billing_history.Outputs[OLE DB Source Output].ExternalColumns[quantity]"
+                      dataType="i4"
+                      name="quantity" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Cargar billing_history\billing_history.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Cargar billing_history\billing_history.Outputs[OLE DB Source Error Output].Columns[id]"
+                      dataType="i4"
+                      lineageId="Package\Cargar billing_history\billing_history.Outputs[OLE DB Source Error Output].Columns[id]"
+                      name="id" />
+                    <outputColumn
+                      refId="Package\Cargar billing_history\billing_history.Outputs[OLE DB Source Error Output].Columns[billing_id]"
+                      dataType="i4"
+                      lineageId="Package\Cargar billing_history\billing_history.Outputs[OLE DB Source Error Output].Columns[billing_id]"
+                      name="billing_id" />
+                    <outputColumn
+                      refId="Package\Cargar billing_history\billing_history.Outputs[OLE DB Source Error Output].Columns[date]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Cargar billing_history\billing_history.Outputs[OLE DB Source Error Output].Columns[date]"
+                      name="date" />
+                    <outputColumn
+                      refId="Package\Cargar billing_history\billing_history.Outputs[OLE DB Source Error Output].Columns[customer_id]"
+                      dataType="i4"
+                      lineageId="Package\Cargar billing_history\billing_history.Outputs[OLE DB Source Error Output].Columns[customer_id]"
+                      name="customer_id" />
+                    <outputColumn
+                      refId="Package\Cargar billing_history\billing_history.Outputs[OLE DB Source Error Output].Columns[employee_id]"
+                      dataType="i4"
+                      lineageId="Package\Cargar billing_history\billing_history.Outputs[OLE DB Source Error Output].Columns[employee_id]"
+                      name="employee_id" />
+                    <outputColumn
+                      refId="Package\Cargar billing_history\billing_history.Outputs[OLE DB Source Error Output].Columns[product_id]"
+                      dataType="i4"
+                      lineageId="Package\Cargar billing_history\billing_history.Outputs[OLE DB Source Error Output].Columns[product_id]"
+                      name="product_id" />
+                    <outputColumn
+                      refId="Package\Cargar billing_history\billing_history.Outputs[OLE DB Source Error Output].Columns[quantity]"
+                      dataType="i4"
+                      lineageId="Package\Cargar billing_history\billing_history.Outputs[OLE DB Source Error Output].Columns[quantity]"
+                      name="quantity" />
+                    <outputColumn
+                      refId="Package\Cargar billing_history\billing_history.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Cargar billing_history\billing_history.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Cargar billing_history\billing_history.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Cargar billing_history\billing_history.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Cargar billing_history\stg_billing_history_G06"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="stg_billing_history_G06"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[stg_billing_history_G06]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Cargar billing_history\stg_billing_history_G06.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[staging]"
+                  connectionManagerRefId="Package.ConnectionManagers[staging]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Cargar billing_history\stg_billing_history_G06.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Cargar billing_history\stg_billing_history_G06.Inputs[OLE DB Destination Input].Columns[id]"
+                      cachedDataType="i4"
+                      cachedName="id"
+                      externalMetadataColumnId="Package\Cargar billing_history\stg_billing_history_G06.Inputs[OLE DB Destination Input].ExternalColumns[id]"
+                      lineageId="Package\Cargar billing_history\billing_history.Outputs[OLE DB Source Output].Columns[id]" />
+                    <inputColumn
+                      refId="Package\Cargar billing_history\stg_billing_history_G06.Inputs[OLE DB Destination Input].Columns[billing_id]"
+                      cachedDataType="i4"
+                      cachedName="billing_id"
+                      externalMetadataColumnId="Package\Cargar billing_history\stg_billing_history_G06.Inputs[OLE DB Destination Input].ExternalColumns[billing_id]"
+                      lineageId="Package\Cargar billing_history\billing_history.Outputs[OLE DB Source Output].Columns[billing_id]" />
+                    <inputColumn
+                      refId="Package\Cargar billing_history\stg_billing_history_G06.Inputs[OLE DB Destination Input].Columns[date]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="date"
+                      externalMetadataColumnId="Package\Cargar billing_history\stg_billing_history_G06.Inputs[OLE DB Destination Input].ExternalColumns[date]"
+                      lineageId="Package\Cargar billing_history\billing_history.Outputs[OLE DB Source Output].Columns[date]" />
+                    <inputColumn
+                      refId="Package\Cargar billing_history\stg_billing_history_G06.Inputs[OLE DB Destination Input].Columns[customer_id]"
+                      cachedDataType="i4"
+                      cachedName="customer_id"
+                      externalMetadataColumnId="Package\Cargar billing_history\stg_billing_history_G06.Inputs[OLE DB Destination Input].ExternalColumns[customer_id]"
+                      lineageId="Package\Cargar billing_history\billing_history.Outputs[OLE DB Source Output].Columns[customer_id]" />
+                    <inputColumn
+                      refId="Package\Cargar billing_history\stg_billing_history_G06.Inputs[OLE DB Destination Input].Columns[employee_id]"
+                      cachedDataType="i4"
+                      cachedName="employee_id"
+                      externalMetadataColumnId="Package\Cargar billing_history\stg_billing_history_G06.Inputs[OLE DB Destination Input].ExternalColumns[employee_id]"
+                      lineageId="Package\Cargar billing_history\billing_history.Outputs[OLE DB Source Output].Columns[employee_id]" />
+                    <inputColumn
+                      refId="Package\Cargar billing_history\stg_billing_history_G06.Inputs[OLE DB Destination Input].Columns[product_id]"
+                      cachedDataType="i4"
+                      cachedName="product_id"
+                      externalMetadataColumnId="Package\Cargar billing_history\stg_billing_history_G06.Inputs[OLE DB Destination Input].ExternalColumns[product_id]"
+                      lineageId="Package\Cargar billing_history\billing_history.Outputs[OLE DB Source Output].Columns[product_id]" />
+                    <inputColumn
+                      refId="Package\Cargar billing_history\stg_billing_history_G06.Inputs[OLE DB Destination Input].Columns[quantity]"
+                      cachedDataType="i4"
+                      cachedName="quantity"
+                      externalMetadataColumnId="Package\Cargar billing_history\stg_billing_history_G06.Inputs[OLE DB Destination Input].ExternalColumns[quantity]"
+                      lineageId="Package\Cargar billing_history\billing_history.Outputs[OLE DB Source Output].Columns[quantity]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Cargar billing_history\stg_billing_history_G06.Inputs[OLE DB Destination Input].ExternalColumns[id]"
+                      dataType="i4"
+                      name="id" />
+                    <externalMetadataColumn
+                      refId="Package\Cargar billing_history\stg_billing_history_G06.Inputs[OLE DB Destination Input].ExternalColumns[billing_id]"
+                      dataType="i4"
+                      name="billing_id" />
+                    <externalMetadataColumn
+                      refId="Package\Cargar billing_history\stg_billing_history_G06.Inputs[OLE DB Destination Input].ExternalColumns[date]"
+                      dataType="dbTimeStamp"
+                      name="date" />
+                    <externalMetadataColumn
+                      refId="Package\Cargar billing_history\stg_billing_history_G06.Inputs[OLE DB Destination Input].ExternalColumns[customer_id]"
+                      dataType="i4"
+                      name="customer_id" />
+                    <externalMetadataColumn
+                      refId="Package\Cargar billing_history\stg_billing_history_G06.Inputs[OLE DB Destination Input].ExternalColumns[employee_id]"
+                      dataType="i4"
+                      name="employee_id" />
+                    <externalMetadataColumn
+                      refId="Package\Cargar billing_history\stg_billing_history_G06.Inputs[OLE DB Destination Input].ExternalColumns[product_id]"
+                      dataType="i4"
+                      name="product_id" />
+                    <externalMetadataColumn
+                      refId="Package\Cargar billing_history\stg_billing_history_G06.Inputs[OLE DB Destination Input].ExternalColumns[quantity]"
+                      dataType="i4"
+                      name="quantity" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Cargar billing_history\stg_billing_history_G06.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Cargar billing_history\stg_billing_history_G06.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Cargar billing_history\stg_billing_history_G06.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Cargar billing_history\stg_billing_history_G06.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Cargar billing_history\stg_billing_history_G06.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Cargar billing_history\stg_billing_history_G06.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Cargar billing_history.Paths[OLE DB Source Output]"
+              endId="Package\Cargar billing_history\stg_billing_history_G06.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\Cargar billing_history\billing_history.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Tarea Ejecutar SQL"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Tarea Ejecutar SQL"
+      DTS:DTSID="{4E901AB4-860F-4197-9961-2F05D5F6FAE8}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Tarea Ejecutar SQL"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{6BEF45B3-1A6F-44BD-962D-43CF9E5C53F5}"
+          SQLTask:SqlStatementSource="TRUNCATE TABLE stg_billing_history_G06;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restricción]"
+      DTS:CreationName=""
+      DTS:DTSID="{3B847725-3B74-4B59-9306-8C5539E8B1D3}"
+      DTS:From="Package\Tarea Ejecutar SQL"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restricción"
+      DTS:To="Package\Cargar billing_history" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--Esta sección CDATA contiene la información de diseño del paquete. Esta sección incluye información como, por ejemplo, las coordenadas (x,y), el ancho y el alto.-->
+<!--Si edita manualmente esta sección y comete un error, puede eliminarlo. -->
+<!--El paquete podrá cargarse normalmente, pero se perderá la información de diseño anterior y el diseñador reorganizará los elementos automáticamente en la superficie de diseño.-->
+<Objects
+  Version="8">
+  <!--Cada uno de los nodos siguientes contiene propiedades que no afectan al comportamiento en tiempo de ejecución.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="176,41.6"
+          Id="Package\Cargar billing_history"
+          TopLeft="345.833314437834,197.599998625914" />
+        <NodeLayout
+          Size="170.4,41.6"
+          Id="Package\Tarea Ejecutar SQL"
+          TopLeft="280.833317989277,71.9333328331179" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restricción]"
+          TopLeft="366.033317989277,113.533332833118">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="67.799996448557,84.0666657927964"
+              Start="0,0"
+              End="67.799996448557,76.5666657927964">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,38.0333328963982" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,38.0333328963982"
+                    Point2="0,42.0333328963982"
+                    Point3="4,42.0333328963982" />
+                  <mssgle:LineSegment
+                    End="63.799996448557,42.0333328963982" />
+                  <mssgle:CubicBezierSegment
+                    Point1="63.799996448557,42.0333328963982"
+                    Point2="67.799996448557,42.0333328963982"
+                    Point3="67.799996448557,46.0333328963982" />
+                  <mssgle:LineSegment
+                    End="67.799996448557,76.5666657927964" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Cargar billing_history">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="186.4,41.6"
+          Id="Package\Cargar billing_history\stg_billing_history_G06"
+          TopLeft="175.099993580084,184.799999132156" />
+        <NodeLayout
+          Size="141.6,41.6"
+          Id="Package\Cargar billing_history\billing_history"
+          TopLeft="109.166663980319,35.7333335020808" />
+        <EdgeLayout
+          Id="Package\Cargar billing_history.Paths[OLE DB Source Output]"
+          TopLeft="179.966663980319,77.3333335020808">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="88.333329599765,107.466665630075"
+              Start="0,0"
+              End="88.333329599765,99.9666656300752">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,49.7333328150376" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,49.7333328150376"
+                    Point2="0,53.7333328150376"
+                    Point3="4,53.7333328150376" />
+                  <mssgle:LineSegment
+                    End="84.333329599765,53.7333328150376" />
+                  <mssgle:CubicBezierSegment
+                    Point1="84.333329599765,53.7333328150376"
+                    Point2="88.333329599765,53.7333328150376"
+                    Point3="88.333329599765,57.7333328150376" />
+                  <mssgle:LineSegment
+                    End="88.333329599765,99.9666656300752" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Cargar billing_history\billing_history">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Cargar billing_history\stg_billing_history_G06">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+﻿<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
   DTS:CreationDate="5/22/2026 8:21:47 PM"
@@ -7,12 +7,12 @@
   DTS:CreatorName="TOTOLENOVO\totor"
   DTS:DTSID="{D8159A8D-16D0-407E-94D0-419B229E057A}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="17.0.1016.0"
+  DTS:LastModifiedProductVersion="16.0.5685.2"
   DTS:LocaleID="11274"
   DTS:ObjectName="Dim-productos"
   DTS:PackageType="5"
-  DTS:VersionBuild="21"
-  DTS:VersionGUID="{71252043-10D0-4497-8118-5F2E5015B2FA}">
+  DTS:VersionBuild="22"
+  DTS:VersionGUID="{6AEB4289-ED94-454E-89B6-64901554E7CE}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -25,7 +25,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=COMPUDEPEPERINA\SQLEXPRESS;Initial Catalog=bd_datawarehouse_2025_G15;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-Dim-productos-{80189F81-72DC-4332-A383-3D74608FDA54}COMPUDEPEPERINA\SQLEXPRESS.bd_datawarehouse_2025_G15;Auto Translate=False;" />
+          DTS:ConnectionString="Data Source=TOTOLENOVO\SQLEXPRESS;Initial Catalog=bd_datawarehouse_2025_G15;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Dim-productos-{80189F81-72DC-4332-A383-3D74608FDA54}COMPUDEPEPERINA\SQLEXPRESS.bd_datawarehouse_2025_G15;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -49,7 +49,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=COMPUDEPEPERINA\SQLEXPRESS;Initial Catalog=bd_staging_2026_G06;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Dim-productos-{F5791969-E956-45D1-A756-EA1726E77BB7}TotoLENOVO\SQLEXPRESS.bd_staging_2026_G06;" />
+          DTS:ConnectionString="Data Source=TOTOLENOVO\SQLEXPRESS;Initial Catalog=bd_staging_2026_G06;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Dim-productos-{F5791969-E956-45D1-A756-EA1726E77BB7}TotoLENOVO\SQLEXPRESS.bd_staging_2026_G06;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -415,7 +415,7 @@
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=17.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -610,7 +610,7 @@
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=17.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
                 <property
                   dataType="System.String"
                   description="The variable that contains the SQL command to be executed."
@@ -805,7 +805,7 @@
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=17.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -1158,9 +1158,17 @@
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
+          Size="192.8,41.6"
+          Id="Package\Cargar DIM_PRODUCTO"
+          TopLeft="352.142857892477,366.294117325988" />
+        <NodeLayout
           Size="150.4,41.6"
           Id="Package\Data Flow Task"
           TopLeft="361.666646906072,215.799998499354" />
+        <NodeLayout
+          Size="191.2,41.6"
+          Id="Package\Delete DIM_PRODUCTO"
+          TopLeft="373.571429366664,289.823529157723" />
         <NodeLayout
           Size="208,41.6"
           Id="Package\Truncar stg_productos_G06"
@@ -1199,14 +1207,6 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="191.2,41.6"
-          Id="Package\Delete DIM_PRODUCTO"
-          TopLeft="373.571429366664,289.823529157723" />
-        <NodeLayout
-          Size="192.8,41.6"
-          Id="Package\Cargar DIM_PRODUCTO"
-          TopLeft="352.142857892477,366.294117325988" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Restricción 1]"
           TopLeft="436.866646906072,257.399998499354">
@@ -1278,69 +1278,6 @@
       </GraphLayout>
     </LayoutInfo>
   </Package>
-  <TaskHost
-    design-time-name="Package\Data Flow Task">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="168.8,41.6"
-          Id="Package\Data Flow Task\Agregar datos a stg"
-          TopLeft="305.833316623338,229.666665069593" />
-        <NodeLayout
-          Size="174.4,41.6"
-          Id="Package\Data Flow Task\Extraer productos txt"
-          TopLeft="190.83332290666,65.8666662086381" />
-        <EdgeLayout
-          Id="Package\Data Flow Task.Paths[Flat File Source Output]"
-          TopLeft="278.03332290666,107.466666208638">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="112.199993716678,122.199998860955"
-              Start="0,0"
-              End="112.199993716678,114.699998860955">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,57.0999994304775" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,57.0999994304775"
-                    Point2="0,61.0999994304775"
-                    Point3="4,61.0999994304775" />
-                  <mssgle:LineSegment
-                    End="108.199993716678,61.0999994304775" />
-                  <mssgle:CubicBezierSegment
-                    Point1="108.199993716678,61.0999994304775"
-                    Point2="112.199993716678,61.0999994304775"
-                    Point3="112.199993716678,65.0999994304775" />
-                  <mssgle:LineSegment
-                    End="112.199993716678,114.699998860955" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task\Agregar datos a stg">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
   <TaskHost
     design-time-name="Package\Cargar DIM_PRODUCTO">
     <LayoutInfo>
@@ -1482,6 +1419,69 @@
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Cargar DIM_PRODUCTO\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Data Flow Task">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="168.8,41.6"
+          Id="Package\Data Flow Task\Agregar datos a stg"
+          TopLeft="305.833316623338,229.666665069593" />
+        <NodeLayout
+          Size="174.4,41.6"
+          Id="Package\Data Flow Task\Extraer productos txt"
+          TopLeft="190.83332290666,65.8666662086381" />
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Flat File Source Output]"
+          TopLeft="278.03332290666,107.466666208638">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="112.199993716678,122.199998860955"
+              Start="0,0"
+              End="112.199993716678,114.699998860955">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,57.0999994304775" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,57.0999994304775"
+                    Point2="0,61.0999994304775"
+                    Point3="4,61.0999994304775" />
+                  <mssgle:LineSegment
+                    End="108.199993716678,61.0999994304775" />
+                  <mssgle:CubicBezierSegment
+                    Point1="108.199993716678,61.0999994304775"
+                    Point2="112.199993716678,61.0999994304775"
+                    Point3="112.199993716678,65.0999994304775" />
+                  <mssgle:LineSegment
+                    End="112.199993716678,114.699998860955" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\Agregar datos a stg">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>

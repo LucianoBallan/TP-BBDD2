@@ -11,8 +11,8 @@
   DTS:LocaleID="11274"
   DTS:ObjectName="Dim-holidays"
   DTS:PackageType="5"
-  DTS:VersionBuild="21"
-  DTS:VersionGUID="{A72DA6A2-7958-41B5-A0D5-458D372F0E61}">
+  DTS:VersionBuild="24"
+  DTS:VersionGUID="{0C93B33C-E76A-427B-9E9A-2F126EBC6D0F}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -95,7 +95,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=TOTOLENOVO\SQLEXPRESS;Provider=SSISOLEDB.6;Location=C:\Program Files\Microsoft SQL Server\MSSQL16.SQLEXPRESS\MSSQL;" />
+          DTS:ConnectionString="Data Source=COMPUDEPEPERINA\SQLEXPRESS;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-Dim-holidays-{65BA04A4-CD8F-429D-80FB-45AECD0093BC}TOTOLENOVO\SQLEXPRESS;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -107,7 +107,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=TotoLENOVO\SQLEXPRESS;Initial Catalog=bd_staging_2026_G06;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-Dim-productos-{5B5921F7-794B-47CC-B34C-A6CB7276908C}TotoLENOVO\SQLEXPRESS.bd_staging_2026_G06;Auto Translate=False;" />
+          DTS:ConnectionString="Data Source=COMPUDEPEPERINA\SQLEXPRESS;Initial Catalog=bd_staging_2026_G06;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Dim-productos-{5B5921F7-794B-47CC-B34C-A6CB7276908C}TotoLENOVO\SQLEXPRESS.bd_staging_2026_G06;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -119,7 +119,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=TotoLENOVO\SQLEXPRESS;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-Dim-productos-{E1578F33-5693-40C3-A6B6-9A7E79CB2CF9}TotoLENOVO\SQLEXPRESS1;Auto Translate=False;" />
+          DTS:ConnectionString="Data Source=COMPUDEPEPERINA\SQLEXPRESS;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Dim-productos-{E1578F33-5693-40C3-A6B6-9A7E79CB2CF9}TotoLENOVO\SQLEXPRESS1;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -455,7 +455,7 @@
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{5B5921F7-794B-47CC-B34C-A6CB7276908C}"
-          SQLTask:SqlStatementSource="TRUNCATE TABLE [dbo].[stg_customer_min_G06];&#xA;TRUNCATE TABLE [dbo].[stg_customer_may_G06];" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:SqlStatementSource="TRUNCATE TABLE [dbo].[stg_holidays_G06];" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
   </DTS:Executables>

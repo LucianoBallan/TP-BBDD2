@@ -11,11 +11,23 @@
   DTS:LocaleID="11274"
   DTS:ObjectName="Dim-customers"
   DTS:PackageType="5"
-  DTS:VersionBuild="18"
-  DTS:VersionGUID="{67785F3A-C0DD-4433-A0F7-4A34F8307F73}">
+  DTS:VersionBuild="48"
+  DTS:VersionGUID="{624C53F8-1C5E-4200-8BBA-B93D29AB7F57}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[COMPUDEPEPERINA\SQLEXPRESS.bd_datawarehouse_2025_G15]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{DC91FB81-5573-4E04-9863-351A06A80272}"
+      DTS:ObjectName="COMPUDEPEPERINA\SQLEXPRESS.bd_datawarehouse_2025_G15">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=TOTOLENOVO\SQLEXPRESS;Initial Catalog=bd_datawarehouse_2025_G15;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Dim-customers-{DC91FB81-5573-4E04-9863-351A06A80272}COMPUDEPEPERINA\SQLEXPRESS.bd_datawarehouse_2025_G15;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[stock_txt]"
       DTS:CreationName="FLATFILE"
@@ -71,7 +83,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=TOTOLENOVO\SQLEXPRESS;Provider=SSISOLEDB.6;Location=C:\Program Files\Microsoft SQL Server\MSSQL16.SQLEXPRESS\MSSQL;" />
+          DTS:ConnectionString="Data Source=COMPUDEPEPERINA\SQLEXPRESS;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-Dim-customers-{E8E6C3C8-C31A-4280-9B4B-2863610179F8}TOTOLENOVO\SQLEXPRESS;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -83,7 +95,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=TotoLENOVO\SQLEXPRESS;Initial Catalog=bd_staging_2026_G06;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-Dim-productos-{C029CA31-9671-4D07-B772-52B9E8109D05}TotoLENOVO\SQLEXPRESS.bd_staging_2026_G06;Auto Translate=False;" />
+          DTS:ConnectionString="Data Source=TOTOLENOVO\SQLEXPRESS;Initial Catalog=bd_staging_2026_G06;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Dim-productos-{C029CA31-9671-4D07-B772-52B9E8109D05}TotoLENOVO\SQLEXPRESS.bd_staging_2026_G06;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -95,7 +107,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=TotoLENOVO\SQLEXPRESS;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-Dim-productos-{0A438ACF-5C2F-40AC-878B-248B9C7AA477}TotoLENOVO\SQLEXPRESS1;Auto Translate=False;" />
+          DTS:ConnectionString="Data Source=COMPUDEPEPERINA\SQLEXPRESS;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Dim-productos-{0A438ACF-5C2F-40AC-878B-248B9C7AA477}TotoLENOVO\SQLEXPRESS1;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -147,6 +159,1747 @@
   </DTS:ConnectionManagers>
   <DTS:Variables />
   <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Cargar DIM_CLIENTE"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{165B5A98-2D86-4C3B-8C19-B634435EE321}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Cargar DIM_CLIENTE"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Cargar DIM_CLIENTE\Data Conversion"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="Data Conversion"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Cargar DIM_CLIENTE\Data Conversion.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Cargar DIM_CLIENTE\Data Conversion.Inputs[Data Conversion Input].Columns[CUSTOMER_ID]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="CUSTOMER_ID"
+                      lineageId="Package\Cargar DIM_CLIENTE\Union All.Outputs[Union All Output 1].Columns[CUSTOMER_ID]" />
+                    <inputColumn
+                      refId="Package\Cargar DIM_CLIENTE\Data Conversion.Inputs[Data Conversion Input].Columns[FULL_NAME]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="FULL_NAME"
+                      lineageId="Package\Cargar DIM_CLIENTE\Union All.Outputs[Union All Output 1].Columns[FULL_NAME]" />
+                    <inputColumn
+                      refId="Package\Cargar DIM_CLIENTE\Data Conversion.Inputs[Data Conversion Input].Columns[CITY]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="CITY"
+                      lineageId="Package\Cargar DIM_CLIENTE\Union All.Outputs[Union All Output 1].Columns[CITY]" />
+                    <inputColumn
+                      refId="Package\Cargar DIM_CLIENTE\Data Conversion.Inputs[Data Conversion Input].Columns[STATE]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="STATE"
+                      lineageId="Package\Cargar DIM_CLIENTE\Union All.Outputs[Union All Output 1].Columns[STATE]" />
+                    <inputColumn
+                      refId="Package\Cargar DIM_CLIENTE\Data Conversion.Inputs[Data Conversion Input].Columns[ZIPCODE]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="ZIPCODE"
+                      lineageId="Package\Cargar DIM_CLIENTE\Union All.Outputs[Union All Output 1].Columns[ZIPCODE]" />
+                    <inputColumn
+                      refId="Package\Cargar DIM_CLIENTE\Data Conversion.Inputs[Data Conversion Input].Columns[TipoCliente]"
+                      cachedDataType="wstr"
+                      cachedLength="9"
+                      cachedName="TipoCliente"
+                      lineageId="Package\Cargar DIM_CLIENTE\Union All.Outputs[Union All Output 1].Columns[TipoCliente]" />
+                    <inputColumn
+                      refId="Package\Cargar DIM_CLIENTE\Data Conversion.Inputs[Data Conversion Input].Columns[BirthDateFixed]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="BirthDateFixed"
+                      lineageId="Package\Cargar DIM_CLIENTE\Union All.Outputs[Union All Output 1].Columns[BirthDateFixed]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Cargar DIM_CLIENTE\Data Conversion.Outputs[Data Conversion Output]"
+                  exclusionGroup="1"
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\Cargar DIM_CLIENTE\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Cargar DIM_CLIENTE\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of CUSTOMER_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Cargar DIM_CLIENTE\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of CUSTOMER_ID]"
+                      name="Copy of CUSTOMER_ID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Cargar DIM_CLIENTE\Union All.Outputs[Union All Output 1].Columns[CUSTOMER_ID]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Cargar DIM_CLIENTE\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of FULL_NAME]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="100"
+                      lineageId="Package\Cargar DIM_CLIENTE\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of FULL_NAME]"
+                      name="Copy of FULL_NAME"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Cargar DIM_CLIENTE\Union All.Outputs[Union All Output 1].Columns[FULL_NAME]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Cargar DIM_CLIENTE\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of CITY]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="100"
+                      lineageId="Package\Cargar DIM_CLIENTE\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of CITY]"
+                      name="Copy of CITY"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Cargar DIM_CLIENTE\Union All.Outputs[Union All Output 1].Columns[CITY]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Cargar DIM_CLIENTE\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of STATE]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="100"
+                      lineageId="Package\Cargar DIM_CLIENTE\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of STATE]"
+                      name="Copy of STATE"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Cargar DIM_CLIENTE\Union All.Outputs[Union All Output 1].Columns[STATE]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Cargar DIM_CLIENTE\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of ZIPCODE]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="10"
+                      lineageId="Package\Cargar DIM_CLIENTE\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of ZIPCODE]"
+                      name="Copy of ZIPCODE"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Cargar DIM_CLIENTE\Union All.Outputs[Union All Output 1].Columns[ZIPCODE]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Cargar DIM_CLIENTE\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of TipoCliente]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="20"
+                      lineageId="Package\Cargar DIM_CLIENTE\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of TipoCliente]"
+                      name="Copy of TipoCliente"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Cargar DIM_CLIENTE\Union All.Outputs[Union All Output 1].Columns[TipoCliente]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Cargar DIM_CLIENTE\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of BirthDateFixed]"
+                      dataType="date"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Cargar DIM_CLIENTE\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of BirthDateFixed]"
+                      name="Copy of BirthDateFixed"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Cargar DIM_CLIENTE\Union All.Outputs[Union All Output 1].Columns[BirthDateFixed]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Cargar DIM_CLIENTE\Data Conversion.Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\Cargar DIM_CLIENTE\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Cargar DIM_CLIENTE\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Cargar DIM_CLIENTE\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Cargar DIM_CLIENTE\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Cargar DIM_CLIENTE\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Cargar DIM_CLIENTE\Derived Column"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Derived Column"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Cargar DIM_CLIENTE\Derived Column.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Cargar DIM_CLIENTE\Derived Column.Inputs[Derived Column Input].Columns[BIRTH_DATE]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="BIRTH_DATE"
+                      lineageId="Package\Cargar DIM_CLIENTE\OLE DB Source.Outputs[OLE DB Source Output].Columns[BIRTH_DATE]" />
+                    <inputColumn
+                      refId="Package\Cargar DIM_CLIENTE\Derived Column.Inputs[Derived Column Input].Columns[CITY]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="CITY"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Cargar DIM_CLIENTE\OLE DB Source.Outputs[OLE DB Source Output].Columns[CITY]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[TRIM](#{Package\Cargar DIM_CLIENTE\OLE DB Source.Outputs[OLE DB Source Output].Columns[CITY]})</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">TRIM(CITY)</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Cargar DIM_CLIENTE\Derived Column.Inputs[Derived Column Input].Columns[STATE]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="STATE"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Cargar DIM_CLIENTE\OLE DB Source.Outputs[OLE DB Source Output].Columns[STATE]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[TRIM](#{Package\Cargar DIM_CLIENTE\OLE DB Source.Outputs[OLE DB Source Output].Columns[STATE]})</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">TRIM(STATE)</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Cargar DIM_CLIENTE\Derived Column.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Cargar DIM_CLIENTE\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Cargar DIM_CLIENTE\Derived Column.Outputs[Derived Column Output].Columns[TipoCliente]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="6"
+                      lineageId="Package\Cargar DIM_CLIENTE\Derived Column.Outputs[Derived Column Output].Columns[TipoCliente]"
+                      name="TipoCliente"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">"retail"</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">"retail"</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Cargar DIM_CLIENTE\Derived Column.Outputs[Derived Column Output].Columns[BirthDateFixed]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="10"
+                      lineageId="Package\Cargar DIM_CLIENTE\Derived Column.Outputs[Derived Column Output].Columns[BirthDateFixed]"
+                      name="BirthDateFixed"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[SUBSTRING](#{Package\Cargar DIM_CLIENTE\OLE DB Source.Outputs[OLE DB Source Output].Columns[BIRTH_DATE]},7,4) + "-" + [SUBSTRING](#{Package\Cargar DIM_CLIENTE\OLE DB Source.Outputs[OLE DB Source Output].Columns[BIRTH_DATE]},1,2) + "-" + [SUBSTRING](#{Package\Cargar DIM_CLIENTE\OLE DB Source.Outputs[OLE DB Source Output].Columns[BIRTH_DATE]},4,2)</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">SUBSTRING(BIRTH_DATE,7,4) + "-" + SUBSTRING(BIRTH_DATE,1,2) + "-" + SUBSTRING(BIRTH_DATE,4,2)</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Cargar DIM_CLIENTE\Derived Column.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Cargar DIM_CLIENTE\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Cargar DIM_CLIENTE\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Cargar DIM_CLIENTE\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Cargar DIM_CLIENTE\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Cargar DIM_CLIENTE\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Cargar DIM_CLIENTE\Derived Column 1"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Derived Column 1"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Cargar DIM_CLIENTE\Derived Column 1.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Cargar DIM_CLIENTE\Derived Column 1.Inputs[Derived Column Input].Columns[BIRTH_DATE]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="BIRTH_DATE"
+                      lineageId="Package\Cargar DIM_CLIENTE\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[BIRTH_DATE]" />
+                    <inputColumn
+                      refId="Package\Cargar DIM_CLIENTE\Derived Column 1.Inputs[Derived Column Input].Columns[CITY]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="CITY"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Cargar DIM_CLIENTE\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[CITY]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[TRIM](#{Package\Cargar DIM_CLIENTE\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[CITY]})</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">TRIM(CITY)</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Cargar DIM_CLIENTE\Derived Column 1.Inputs[Derived Column Input].Columns[STATE]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="STATE"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Cargar DIM_CLIENTE\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[STATE]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[TRIM](#{Package\Cargar DIM_CLIENTE\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[STATE]})</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">TRIM(STATE)</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Cargar DIM_CLIENTE\Derived Column 1.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Cargar DIM_CLIENTE\Derived Column 1.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Cargar DIM_CLIENTE\Derived Column 1.Outputs[Derived Column Output].Columns[TipoCliente]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="9"
+                      lineageId="Package\Cargar DIM_CLIENTE\Derived Column 1.Outputs[Derived Column Output].Columns[TipoCliente]"
+                      name="TipoCliente"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">"wholesale"</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">"wholesale"</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Cargar DIM_CLIENTE\Derived Column 1.Outputs[Derived Column Output].Columns[BirthDateFixed]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="10"
+                      lineageId="Package\Cargar DIM_CLIENTE\Derived Column 1.Outputs[Derived Column Output].Columns[BirthDateFixed]"
+                      name="BirthDateFixed"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[SUBSTRING](#{Package\Cargar DIM_CLIENTE\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[BIRTH_DATE]},7,4) + "-" + [SUBSTRING](#{Package\Cargar DIM_CLIENTE\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[BIRTH_DATE]},1,2) + "-" + [SUBSTRING](#{Package\Cargar DIM_CLIENTE\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[BIRTH_DATE]},4,2)</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">SUBSTRING(BIRTH_DATE,7,4) + "-" + SUBSTRING(BIRTH_DATE,1,2) + "-" + SUBSTRING(BIRTH_DATE,4,2)</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Cargar DIM_CLIENTE\Derived Column 1.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Cargar DIM_CLIENTE\Derived Column 1.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Cargar DIM_CLIENTE\Derived Column 1.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Cargar DIM_CLIENTE\Derived Column 1.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Cargar DIM_CLIENTE\Derived Column 1.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Cargar DIM_CLIENTE\Derived Column 1.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Cargar DIM_CLIENTE\Lookup"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="Lookup"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[stg_regiones_G06]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[stg_regiones_G06]) [refTable]
+where [refTable].[Ciudad] = ? and [refTable].[Estado] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="Region" dataType="DT_STR" length="100" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Estado" dataType="DT_STR" length="100" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Ciudad" dataType="DT_STR" length="100" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="CodPostal" dataType="DT_STR" length="100" precision="0" scale="0" codePage="1252"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\Cargar DIM_CLIENTE\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of CITY]};#{Package\Cargar DIM_CLIENTE\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of STATE]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Cargar DIM_CLIENTE\Lookup.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[TotoLENOVO\SQLEXPRESS.bd_staging_2026_G06]"
+                  connectionManagerRefId="Package.ConnectionManagers[TotoLENOVO\SQLEXPRESS.bd_staging_2026_G06]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Cargar DIM_CLIENTE\Lookup.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Cargar DIM_CLIENTE\Lookup.Inputs[Lookup Input].Columns[Copy of CITY]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="Copy of CITY"
+                      lineageId="Package\Cargar DIM_CLIENTE\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of CITY]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">Ciudad</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Cargar DIM_CLIENTE\Lookup.Inputs[Lookup Input].Columns[Copy of STATE]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="Copy of STATE"
+                      lineageId="Package\Cargar DIM_CLIENTE\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of STATE]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">Estado</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Cargar DIM_CLIENTE\Lookup.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  errorRowDisposition="IgnoreFailure"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\Cargar DIM_CLIENTE\Lookup.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Cargar DIM_CLIENTE\Lookup.Outputs[Lookup Match Output].Columns[Region]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Copy Column"
+                      length="100"
+                      lineageId="Package\Cargar DIM_CLIENTE\Lookup.Outputs[Lookup Match Output].Columns[Region]"
+                      name="Region"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">Region</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Cargar DIM_CLIENTE\Lookup.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\Cargar DIM_CLIENTE\Lookup.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Cargar DIM_CLIENTE\Lookup.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\Cargar DIM_CLIENTE\Lookup.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Cargar DIM_CLIENTE\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Cargar DIM_CLIENTE\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Cargar DIM_CLIENTE\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Cargar DIM_CLIENTE\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Cargar DIM_CLIENTE\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[DIM_CLIENTE]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Cargar DIM_CLIENTE\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[COMPUDEPEPERINA\SQLEXPRESS.bd_datawarehouse_2025_G15]"
+                  connectionManagerRefId="Package.ConnectionManagers[COMPUDEPEPERINA\SQLEXPRESS.bd_datawarehouse_2025_G15]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Cargar DIM_CLIENTE\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Cargar DIM_CLIENTE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Region]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="Region"
+                      externalMetadataColumnId="Package\Cargar DIM_CLIENTE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Region]"
+                      lineageId="Package\Cargar DIM_CLIENTE\Lookup.Outputs[Lookup Match Output].Columns[Region]" />
+                    <inputColumn
+                      refId="Package\Cargar DIM_CLIENTE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of FULL_NAME]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="Copy of FULL_NAME"
+                      externalMetadataColumnId="Package\Cargar DIM_CLIENTE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[NombreCompleto]"
+                      lineageId="Package\Cargar DIM_CLIENTE\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of FULL_NAME]" />
+                    <inputColumn
+                      refId="Package\Cargar DIM_CLIENTE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of TipoCliente]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="Copy of TipoCliente"
+                      externalMetadataColumnId="Package\Cargar DIM_CLIENTE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TipoCliente]"
+                      lineageId="Package\Cargar DIM_CLIENTE\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of TipoCliente]" />
+                    <inputColumn
+                      refId="Package\Cargar DIM_CLIENTE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of CITY]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="Copy of CITY"
+                      externalMetadataColumnId="Package\Cargar DIM_CLIENTE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Ciudad]"
+                      lineageId="Package\Cargar DIM_CLIENTE\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of CITY]" />
+                    <inputColumn
+                      refId="Package\Cargar DIM_CLIENTE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of STATE]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="Copy of STATE"
+                      externalMetadataColumnId="Package\Cargar DIM_CLIENTE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Estado]"
+                      lineageId="Package\Cargar DIM_CLIENTE\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of STATE]" />
+                    <inputColumn
+                      refId="Package\Cargar DIM_CLIENTE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of CUSTOMER_ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Copy of CUSTOMER_ID"
+                      externalMetadataColumnId="Package\Cargar DIM_CLIENTE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CustomerID]"
+                      lineageId="Package\Cargar DIM_CLIENTE\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of CUSTOMER_ID]" />
+                    <inputColumn
+                      refId="Package\Cargar DIM_CLIENTE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of ZIPCODE]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="Copy of ZIPCODE"
+                      externalMetadataColumnId="Package\Cargar DIM_CLIENTE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ZipCode]"
+                      lineageId="Package\Cargar DIM_CLIENTE\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of ZIPCODE]" />
+                    <inputColumn
+                      refId="Package\Cargar DIM_CLIENTE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of BirthDateFixed]"
+                      cachedDataType="date"
+                      cachedName="Copy of BirthDateFixed"
+                      externalMetadataColumnId="Package\Cargar DIM_CLIENTE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[FechaNacimiento]"
+                      lineageId="Package\Cargar DIM_CLIENTE\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of BirthDateFixed]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Cargar DIM_CLIENTE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SK_CLIENTE]"
+                      dataType="i4"
+                      name="SK_CLIENTE" />
+                    <externalMetadataColumn
+                      refId="Package\Cargar DIM_CLIENTE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CustomerID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="CustomerID" />
+                    <externalMetadataColumn
+                      refId="Package\Cargar DIM_CLIENTE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[NombreCompleto]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="NombreCompleto" />
+                    <externalMetadataColumn
+                      refId="Package\Cargar DIM_CLIENTE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[FechaNacimiento]"
+                      dataType="dbDate"
+                      name="FechaNacimiento" />
+                    <externalMetadataColumn
+                      refId="Package\Cargar DIM_CLIENTE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TipoCliente]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="TipoCliente" />
+                    <externalMetadataColumn
+                      refId="Package\Cargar DIM_CLIENTE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Ciudad]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="Ciudad" />
+                    <externalMetadataColumn
+                      refId="Package\Cargar DIM_CLIENTE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Estado]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="Estado" />
+                    <externalMetadataColumn
+                      refId="Package\Cargar DIM_CLIENTE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Region]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="Region" />
+                    <externalMetadataColumn
+                      refId="Package\Cargar DIM_CLIENTE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ZipCode]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="ZipCode" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Cargar DIM_CLIENTE\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Cargar DIM_CLIENTE\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Cargar DIM_CLIENTE\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Cargar DIM_CLIENTE\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Cargar DIM_CLIENTE\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Cargar DIM_CLIENTE\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Cargar DIM_CLIENTE\OLE DB Source"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="OLE DB Source"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[stg_customer_min_G06]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Cargar DIM_CLIENTE\OLE DB Source.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[TotoLENOVO\SQLEXPRESS.bd_staging_2026_G06]"
+                  connectionManagerRefId="Package.ConnectionManagers[TotoLENOVO\SQLEXPRESS.bd_staging_2026_G06]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Cargar DIM_CLIENTE\OLE DB Source.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Cargar DIM_CLIENTE\OLE DB Source.Outputs[OLE DB Source Output].Columns[CUSTOMER_ID]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Cargar DIM_CLIENTE\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CUSTOMER_ID]"
+                      length="255"
+                      lineageId="Package\Cargar DIM_CLIENTE\OLE DB Source.Outputs[OLE DB Source Output].Columns[CUSTOMER_ID]"
+                      name="CUSTOMER_ID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Cargar DIM_CLIENTE\OLE DB Source.Outputs[OLE DB Source Output].Columns[FULL_NAME]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Cargar DIM_CLIENTE\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[FULL_NAME]"
+                      length="255"
+                      lineageId="Package\Cargar DIM_CLIENTE\OLE DB Source.Outputs[OLE DB Source Output].Columns[FULL_NAME]"
+                      name="FULL_NAME"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Cargar DIM_CLIENTE\OLE DB Source.Outputs[OLE DB Source Output].Columns[BIRTH_DATE]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Cargar DIM_CLIENTE\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[BIRTH_DATE]"
+                      length="255"
+                      lineageId="Package\Cargar DIM_CLIENTE\OLE DB Source.Outputs[OLE DB Source Output].Columns[BIRTH_DATE]"
+                      name="BIRTH_DATE"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Cargar DIM_CLIENTE\OLE DB Source.Outputs[OLE DB Source Output].Columns[CITY]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Cargar DIM_CLIENTE\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CITY]"
+                      length="255"
+                      lineageId="Package\Cargar DIM_CLIENTE\OLE DB Source.Outputs[OLE DB Source Output].Columns[CITY]"
+                      name="CITY"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Cargar DIM_CLIENTE\OLE DB Source.Outputs[OLE DB Source Output].Columns[STATE]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Cargar DIM_CLIENTE\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[STATE]"
+                      length="255"
+                      lineageId="Package\Cargar DIM_CLIENTE\OLE DB Source.Outputs[OLE DB Source Output].Columns[STATE]"
+                      name="STATE"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Cargar DIM_CLIENTE\OLE DB Source.Outputs[OLE DB Source Output].Columns[ZIPCODE]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Cargar DIM_CLIENTE\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ZIPCODE]"
+                      length="255"
+                      lineageId="Package\Cargar DIM_CLIENTE\OLE DB Source.Outputs[OLE DB Source Output].Columns[ZIPCODE]"
+                      name="ZIPCODE"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Cargar DIM_CLIENTE\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CUSTOMER_ID]"
+                      dataType="wstr"
+                      length="255"
+                      name="CUSTOMER_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Cargar DIM_CLIENTE\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[FULL_NAME]"
+                      dataType="wstr"
+                      length="255"
+                      name="FULL_NAME" />
+                    <externalMetadataColumn
+                      refId="Package\Cargar DIM_CLIENTE\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[BIRTH_DATE]"
+                      dataType="wstr"
+                      length="255"
+                      name="BIRTH_DATE" />
+                    <externalMetadataColumn
+                      refId="Package\Cargar DIM_CLIENTE\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CITY]"
+                      dataType="wstr"
+                      length="255"
+                      name="CITY" />
+                    <externalMetadataColumn
+                      refId="Package\Cargar DIM_CLIENTE\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[STATE]"
+                      dataType="wstr"
+                      length="255"
+                      name="STATE" />
+                    <externalMetadataColumn
+                      refId="Package\Cargar DIM_CLIENTE\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ZIPCODE]"
+                      dataType="wstr"
+                      length="255"
+                      name="ZIPCODE" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Cargar DIM_CLIENTE\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Cargar DIM_CLIENTE\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CUSTOMER_ID]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Cargar DIM_CLIENTE\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CUSTOMER_ID]"
+                      name="CUSTOMER_ID" />
+                    <outputColumn
+                      refId="Package\Cargar DIM_CLIENTE\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[FULL_NAME]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Cargar DIM_CLIENTE\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[FULL_NAME]"
+                      name="FULL_NAME" />
+                    <outputColumn
+                      refId="Package\Cargar DIM_CLIENTE\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[BIRTH_DATE]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Cargar DIM_CLIENTE\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[BIRTH_DATE]"
+                      name="BIRTH_DATE" />
+                    <outputColumn
+                      refId="Package\Cargar DIM_CLIENTE\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CITY]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Cargar DIM_CLIENTE\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CITY]"
+                      name="CITY" />
+                    <outputColumn
+                      refId="Package\Cargar DIM_CLIENTE\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[STATE]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Cargar DIM_CLIENTE\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[STATE]"
+                      name="STATE" />
+                    <outputColumn
+                      refId="Package\Cargar DIM_CLIENTE\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ZIPCODE]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Cargar DIM_CLIENTE\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ZIPCODE]"
+                      name="ZIPCODE" />
+                    <outputColumn
+                      refId="Package\Cargar DIM_CLIENTE\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Cargar DIM_CLIENTE\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Cargar DIM_CLIENTE\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Cargar DIM_CLIENTE\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Cargar DIM_CLIENTE\OLE DB Source 1"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="OLE DB Source 1"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[stg_customer_may_G06]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Cargar DIM_CLIENTE\OLE DB Source 1.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[TotoLENOVO\SQLEXPRESS.bd_staging_2026_G06]"
+                  connectionManagerRefId="Package.ConnectionManagers[TotoLENOVO\SQLEXPRESS.bd_staging_2026_G06]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Cargar DIM_CLIENTE\OLE DB Source 1.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Cargar DIM_CLIENTE\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[CUSTOMER_ID]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Cargar DIM_CLIENTE\OLE DB Source 1.Outputs[OLE DB Source Output].ExternalColumns[CUSTOMER_ID]"
+                      length="255"
+                      lineageId="Package\Cargar DIM_CLIENTE\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[CUSTOMER_ID]"
+                      name="CUSTOMER_ID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Cargar DIM_CLIENTE\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[FULL_NAME]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Cargar DIM_CLIENTE\OLE DB Source 1.Outputs[OLE DB Source Output].ExternalColumns[FULL_NAME]"
+                      length="255"
+                      lineageId="Package\Cargar DIM_CLIENTE\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[FULL_NAME]"
+                      name="FULL_NAME"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Cargar DIM_CLIENTE\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[BIRTH_DATE]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Cargar DIM_CLIENTE\OLE DB Source 1.Outputs[OLE DB Source Output].ExternalColumns[BIRTH_DATE]"
+                      length="255"
+                      lineageId="Package\Cargar DIM_CLIENTE\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[BIRTH_DATE]"
+                      name="BIRTH_DATE"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Cargar DIM_CLIENTE\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[CITY]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Cargar DIM_CLIENTE\OLE DB Source 1.Outputs[OLE DB Source Output].ExternalColumns[CITY]"
+                      length="255"
+                      lineageId="Package\Cargar DIM_CLIENTE\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[CITY]"
+                      name="CITY"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Cargar DIM_CLIENTE\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[STATE]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Cargar DIM_CLIENTE\OLE DB Source 1.Outputs[OLE DB Source Output].ExternalColumns[STATE]"
+                      length="255"
+                      lineageId="Package\Cargar DIM_CLIENTE\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[STATE]"
+                      name="STATE"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Cargar DIM_CLIENTE\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[ZIPCODE]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Cargar DIM_CLIENTE\OLE DB Source 1.Outputs[OLE DB Source Output].ExternalColumns[ZIPCODE]"
+                      length="255"
+                      lineageId="Package\Cargar DIM_CLIENTE\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[ZIPCODE]"
+                      name="ZIPCODE"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Cargar DIM_CLIENTE\OLE DB Source 1.Outputs[OLE DB Source Output].ExternalColumns[CUSTOMER_ID]"
+                      dataType="wstr"
+                      length="255"
+                      name="CUSTOMER_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Cargar DIM_CLIENTE\OLE DB Source 1.Outputs[OLE DB Source Output].ExternalColumns[FULL_NAME]"
+                      dataType="wstr"
+                      length="255"
+                      name="FULL_NAME" />
+                    <externalMetadataColumn
+                      refId="Package\Cargar DIM_CLIENTE\OLE DB Source 1.Outputs[OLE DB Source Output].ExternalColumns[BIRTH_DATE]"
+                      dataType="wstr"
+                      length="255"
+                      name="BIRTH_DATE" />
+                    <externalMetadataColumn
+                      refId="Package\Cargar DIM_CLIENTE\OLE DB Source 1.Outputs[OLE DB Source Output].ExternalColumns[CITY]"
+                      dataType="wstr"
+                      length="255"
+                      name="CITY" />
+                    <externalMetadataColumn
+                      refId="Package\Cargar DIM_CLIENTE\OLE DB Source 1.Outputs[OLE DB Source Output].ExternalColumns[STATE]"
+                      dataType="wstr"
+                      length="255"
+                      name="STATE" />
+                    <externalMetadataColumn
+                      refId="Package\Cargar DIM_CLIENTE\OLE DB Source 1.Outputs[OLE DB Source Output].ExternalColumns[ZIPCODE]"
+                      dataType="wstr"
+                      length="255"
+                      name="ZIPCODE" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Cargar DIM_CLIENTE\OLE DB Source 1.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Cargar DIM_CLIENTE\OLE DB Source 1.Outputs[OLE DB Source Error Output].Columns[CUSTOMER_ID]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Cargar DIM_CLIENTE\OLE DB Source 1.Outputs[OLE DB Source Error Output].Columns[CUSTOMER_ID]"
+                      name="CUSTOMER_ID" />
+                    <outputColumn
+                      refId="Package\Cargar DIM_CLIENTE\OLE DB Source 1.Outputs[OLE DB Source Error Output].Columns[FULL_NAME]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Cargar DIM_CLIENTE\OLE DB Source 1.Outputs[OLE DB Source Error Output].Columns[FULL_NAME]"
+                      name="FULL_NAME" />
+                    <outputColumn
+                      refId="Package\Cargar DIM_CLIENTE\OLE DB Source 1.Outputs[OLE DB Source Error Output].Columns[BIRTH_DATE]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Cargar DIM_CLIENTE\OLE DB Source 1.Outputs[OLE DB Source Error Output].Columns[BIRTH_DATE]"
+                      name="BIRTH_DATE" />
+                    <outputColumn
+                      refId="Package\Cargar DIM_CLIENTE\OLE DB Source 1.Outputs[OLE DB Source Error Output].Columns[CITY]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Cargar DIM_CLIENTE\OLE DB Source 1.Outputs[OLE DB Source Error Output].Columns[CITY]"
+                      name="CITY" />
+                    <outputColumn
+                      refId="Package\Cargar DIM_CLIENTE\OLE DB Source 1.Outputs[OLE DB Source Error Output].Columns[STATE]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Cargar DIM_CLIENTE\OLE DB Source 1.Outputs[OLE DB Source Error Output].Columns[STATE]"
+                      name="STATE" />
+                    <outputColumn
+                      refId="Package\Cargar DIM_CLIENTE\OLE DB Source 1.Outputs[OLE DB Source Error Output].Columns[ZIPCODE]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Cargar DIM_CLIENTE\OLE DB Source 1.Outputs[OLE DB Source Error Output].Columns[ZIPCODE]"
+                      name="ZIPCODE" />
+                    <outputColumn
+                      refId="Package\Cargar DIM_CLIENTE\OLE DB Source 1.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Cargar DIM_CLIENTE\OLE DB Source 1.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Cargar DIM_CLIENTE\OLE DB Source 1.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Cargar DIM_CLIENTE\OLE DB Source 1.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Cargar DIM_CLIENTE\Union All"
+              componentClassID="Microsoft.UnionAll"
+              contactInfo="Union All;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Combines rows from multiple data flows without sorting. For example, add rows back to a data flow after correction of errors. If sorting is important, we recommend using the Merge transformation."
+              name="Union All"
+              version="1">
+              <inputs>
+                <input
+                  refId="Package\Cargar DIM_CLIENTE\Union All.Inputs[Union All Input 1]"
+                  name="Union All Input 1">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Cargar DIM_CLIENTE\Union All.Inputs[Union All Input 1].Columns[CUSTOMER_ID]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="CUSTOMER_ID"
+                      lineageId="Package\Cargar DIM_CLIENTE\OLE DB Source.Outputs[OLE DB Source Output].Columns[CUSTOMER_ID]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Cargar DIM_CLIENTE\Union All.Outputs[Union All Output 1].Columns[CUSTOMER_ID]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Cargar DIM_CLIENTE\Union All.Inputs[Union All Input 1].Columns[FULL_NAME]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="FULL_NAME"
+                      lineageId="Package\Cargar DIM_CLIENTE\OLE DB Source.Outputs[OLE DB Source Output].Columns[FULL_NAME]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Cargar DIM_CLIENTE\Union All.Outputs[Union All Output 1].Columns[FULL_NAME]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Cargar DIM_CLIENTE\Union All.Inputs[Union All Input 1].Columns[BIRTH_DATE]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="BIRTH_DATE"
+                      lineageId="Package\Cargar DIM_CLIENTE\OLE DB Source.Outputs[OLE DB Source Output].Columns[BIRTH_DATE]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Cargar DIM_CLIENTE\Union All.Outputs[Union All Output 1].Columns[BIRTH_DATE]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Cargar DIM_CLIENTE\Union All.Inputs[Union All Input 1].Columns[CITY]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="CITY"
+                      lineageId="Package\Cargar DIM_CLIENTE\OLE DB Source.Outputs[OLE DB Source Output].Columns[CITY]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Cargar DIM_CLIENTE\Union All.Outputs[Union All Output 1].Columns[CITY]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Cargar DIM_CLIENTE\Union All.Inputs[Union All Input 1].Columns[STATE]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="STATE"
+                      lineageId="Package\Cargar DIM_CLIENTE\OLE DB Source.Outputs[OLE DB Source Output].Columns[STATE]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Cargar DIM_CLIENTE\Union All.Outputs[Union All Output 1].Columns[STATE]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Cargar DIM_CLIENTE\Union All.Inputs[Union All Input 1].Columns[ZIPCODE]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="ZIPCODE"
+                      lineageId="Package\Cargar DIM_CLIENTE\OLE DB Source.Outputs[OLE DB Source Output].Columns[ZIPCODE]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Cargar DIM_CLIENTE\Union All.Outputs[Union All Output 1].Columns[ZIPCODE]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Cargar DIM_CLIENTE\Union All.Inputs[Union All Input 1].Columns[TipoCliente]"
+                      cachedDataType="wstr"
+                      cachedLength="6"
+                      cachedName="TipoCliente"
+                      lineageId="Package\Cargar DIM_CLIENTE\Derived Column.Outputs[Derived Column Output].Columns[TipoCliente]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Cargar DIM_CLIENTE\Union All.Outputs[Union All Output 1].Columns[TipoCliente]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Cargar DIM_CLIENTE\Union All.Inputs[Union All Input 1].Columns[BirthDateFixed]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="BirthDateFixed"
+                      lineageId="Package\Cargar DIM_CLIENTE\Derived Column.Outputs[Derived Column Output].Columns[BirthDateFixed]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Cargar DIM_CLIENTE\Union All.Outputs[Union All Output 1].Columns[BirthDateFixed]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Cargar DIM_CLIENTE\Union All.Inputs[Union All Input 2]"
+                  hasSideEffects="true"
+                  name="Union All Input 2">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Cargar DIM_CLIENTE\Union All.Inputs[Union All Input 2].Columns[CUSTOMER_ID]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="CUSTOMER_ID"
+                      lineageId="Package\Cargar DIM_CLIENTE\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[CUSTOMER_ID]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Cargar DIM_CLIENTE\Union All.Outputs[Union All Output 1].Columns[CUSTOMER_ID]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Cargar DIM_CLIENTE\Union All.Inputs[Union All Input 2].Columns[FULL_NAME]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="FULL_NAME"
+                      lineageId="Package\Cargar DIM_CLIENTE\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[FULL_NAME]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Cargar DIM_CLIENTE\Union All.Outputs[Union All Output 1].Columns[FULL_NAME]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Cargar DIM_CLIENTE\Union All.Inputs[Union All Input 2].Columns[BIRTH_DATE]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="BIRTH_DATE"
+                      lineageId="Package\Cargar DIM_CLIENTE\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[BIRTH_DATE]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Cargar DIM_CLIENTE\Union All.Outputs[Union All Output 1].Columns[BIRTH_DATE]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Cargar DIM_CLIENTE\Union All.Inputs[Union All Input 2].Columns[CITY]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="CITY"
+                      lineageId="Package\Cargar DIM_CLIENTE\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[CITY]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Cargar DIM_CLIENTE\Union All.Outputs[Union All Output 1].Columns[CITY]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Cargar DIM_CLIENTE\Union All.Inputs[Union All Input 2].Columns[STATE]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="STATE"
+                      lineageId="Package\Cargar DIM_CLIENTE\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[STATE]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Cargar DIM_CLIENTE\Union All.Outputs[Union All Output 1].Columns[STATE]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Cargar DIM_CLIENTE\Union All.Inputs[Union All Input 2].Columns[ZIPCODE]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="ZIPCODE"
+                      lineageId="Package\Cargar DIM_CLIENTE\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[ZIPCODE]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Cargar DIM_CLIENTE\Union All.Outputs[Union All Output 1].Columns[ZIPCODE]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Cargar DIM_CLIENTE\Union All.Inputs[Union All Input 2].Columns[TipoCliente]"
+                      cachedDataType="wstr"
+                      cachedLength="9"
+                      cachedName="TipoCliente"
+                      lineageId="Package\Cargar DIM_CLIENTE\Derived Column 1.Outputs[Derived Column Output].Columns[TipoCliente]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Cargar DIM_CLIENTE\Union All.Outputs[Union All Output 1].Columns[TipoCliente]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Cargar DIM_CLIENTE\Union All.Inputs[Union All Input 2].Columns[BirthDateFixed]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="BirthDateFixed"
+                      lineageId="Package\Cargar DIM_CLIENTE\Derived Column 1.Outputs[Derived Column Output].Columns[BirthDateFixed]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Cargar DIM_CLIENTE\Union All.Outputs[Union All Output 1].Columns[BirthDateFixed]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Cargar DIM_CLIENTE\Union All.Inputs[Union All Input 3]"
+                  dangling="true"
+                  hasSideEffects="true"
+                  name="Union All Input 3">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Cargar DIM_CLIENTE\Union All.Outputs[Union All Output 1]"
+                  name="Union All Output 1">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Cargar DIM_CLIENTE\Union All.Outputs[Union All Output 1].Columns[CUSTOMER_ID]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Cargar DIM_CLIENTE\Union All.Outputs[Union All Output 1].Columns[CUSTOMER_ID]"
+                      name="CUSTOMER_ID" />
+                    <outputColumn
+                      refId="Package\Cargar DIM_CLIENTE\Union All.Outputs[Union All Output 1].Columns[FULL_NAME]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Cargar DIM_CLIENTE\Union All.Outputs[Union All Output 1].Columns[FULL_NAME]"
+                      name="FULL_NAME" />
+                    <outputColumn
+                      refId="Package\Cargar DIM_CLIENTE\Union All.Outputs[Union All Output 1].Columns[BIRTH_DATE]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Cargar DIM_CLIENTE\Union All.Outputs[Union All Output 1].Columns[BIRTH_DATE]"
+                      name="BIRTH_DATE" />
+                    <outputColumn
+                      refId="Package\Cargar DIM_CLIENTE\Union All.Outputs[Union All Output 1].Columns[CITY]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Cargar DIM_CLIENTE\Union All.Outputs[Union All Output 1].Columns[CITY]"
+                      name="CITY" />
+                    <outputColumn
+                      refId="Package\Cargar DIM_CLIENTE\Union All.Outputs[Union All Output 1].Columns[STATE]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Cargar DIM_CLIENTE\Union All.Outputs[Union All Output 1].Columns[STATE]"
+                      name="STATE" />
+                    <outputColumn
+                      refId="Package\Cargar DIM_CLIENTE\Union All.Outputs[Union All Output 1].Columns[ZIPCODE]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Cargar DIM_CLIENTE\Union All.Outputs[Union All Output 1].Columns[ZIPCODE]"
+                      name="ZIPCODE" />
+                    <outputColumn
+                      refId="Package\Cargar DIM_CLIENTE\Union All.Outputs[Union All Output 1].Columns[TipoCliente]"
+                      dataType="wstr"
+                      length="9"
+                      lineageId="Package\Cargar DIM_CLIENTE\Union All.Outputs[Union All Output 1].Columns[TipoCliente]"
+                      name="TipoCliente" />
+                    <outputColumn
+                      refId="Package\Cargar DIM_CLIENTE\Union All.Outputs[Union All Output 1].Columns[BirthDateFixed]"
+                      dataType="wstr"
+                      length="10"
+                      lineageId="Package\Cargar DIM_CLIENTE\Union All.Outputs[Union All Output 1].Columns[BirthDateFixed]"
+                      name="BirthDateFixed" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Cargar DIM_CLIENTE.Paths[Data Conversion Output]"
+              endId="Package\Cargar DIM_CLIENTE\Lookup.Inputs[Lookup Input]"
+              name="Data Conversion Output"
+              startId="Package\Cargar DIM_CLIENTE\Data Conversion.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\Cargar DIM_CLIENTE.Paths[Derived Column Output]"
+              endId="Package\Cargar DIM_CLIENTE\Union All.Inputs[Union All Input 1]"
+              name="Derived Column Output"
+              startId="Package\Cargar DIM_CLIENTE\Derived Column.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Cargar DIM_CLIENTE.Paths[Derived Column Output1]"
+              endId="Package\Cargar DIM_CLIENTE\Union All.Inputs[Union All Input 2]"
+              name="Derived Column Output"
+              startId="Package\Cargar DIM_CLIENTE\Derived Column 1.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Cargar DIM_CLIENTE.Paths[Lookup Match Output]"
+              endId="Package\Cargar DIM_CLIENTE\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="Lookup Match Output"
+              startId="Package\Cargar DIM_CLIENTE\Lookup.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\Cargar DIM_CLIENTE.Paths[OLE DB Source Output]"
+              endId="Package\Cargar DIM_CLIENTE\Derived Column.Inputs[Derived Column Input]"
+              name="OLE DB Source Output"
+              startId="Package\Cargar DIM_CLIENTE\OLE DB Source.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Cargar DIM_CLIENTE.Paths[OLE DB Source Output1]"
+              endId="Package\Cargar DIM_CLIENTE\Derived Column 1.Inputs[Derived Column Input]"
+              name="OLE DB Source Output"
+              startId="Package\Cargar DIM_CLIENTE\OLE DB Source 1.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Cargar DIM_CLIENTE.Paths[Union All Output 1]"
+              endId="Package\Cargar DIM_CLIENTE\Data Conversion.Inputs[Data Conversion Input]"
+              name="Union All Output 1"
+              startId="Package\Cargar DIM_CLIENTE\Union All.Outputs[Union All Output 1]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
     <DTS:Executable
       DTS:refId="Package\Data Flow Task"
       DTS:CreationName="Microsoft.Pipeline"
@@ -1060,6 +2813,22 @@
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
+      DTS:refId="Package\Delete DIM_CLIENTE"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Tarea Ejecutar SQL"
+      DTS:DTSID="{B7798041-1F2C-4EE9-A456-1AACE32C4415}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Delete DIM_CLIENTE"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{DC91FB81-5573-4E04-9863-351A06A80272}"
+          SQLTask:SqlStatementSource="DELETE FROM [dbo].[DIM_CLIENTE]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
       DTS:refId="Package\Tarea Ejecutar SQL"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Tarea Ejecutar SQL"
@@ -1076,6 +2845,22 @@
           SQLTask:SqlStatementSource="TRUNCATE TABLE [dbo].[stg_customer_min_G06];&#xA;TRUNCATE TABLE [dbo].[stg_customer_may_G06];" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Tarea Ejecutar SQL 1"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Tarea Ejecutar SQL"
+      DTS:DTSID="{397E0FDE-8713-40B4-AF08-CCBDD75726F1}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Tarea Ejecutar SQL 1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{C029CA31-9671-4D07-B772-52B9E8109D05}"
+          SQLTask:SqlStatementSource="UPDATE stg_customer_min_G06 SET BIRTH_DATE = '11/11/1969' WHERE BIRTH_DATE = '11*/11/1969';&#xA;UPDATE stg_customer_min_G06 SET BIRTH_DATE = '12/17/1953' WHERE BIRTH_DATE = '12/17*/1953';&#xA;UPDATE stg_customer_min_G06 SET BIRTH_DATE = '11/03/1968' WHERE BIRTH_DATE = '11j/03/1968';&#xA;UPDATE stg_customer_may_G06 SET BIRTH_DATE = '11/11/1969' WHERE BIRTH_DATE = '11*/11/1969';&#xA;UPDATE stg_customer_may_G06 SET BIRTH_DATE = '12/17/1953' WHERE BIRTH_DATE = '12/17*/1953';&#xA;UPDATE stg_customer_may_G06 SET BIRTH_DATE = '11/03/1968' WHERE BIRTH_DATE = '11j/03/1968';&#xA;UPDATE stg_customer_may_G06 SET BIRTH_DATE = '01/01/1900' WHERE BIRTH_DATE = '44/45/1943';&#xA;UPDATE stg_customer_may_G06 SET BIRTH_DATE = '10/05/1964' WHERE BIRTH_DATE = '10/50/1964';&#xA;UPDATE stg_customer_min_G06 SET CITY = 'Peoria' WHERE CITY = 'Chicago' AND STATE = 'Illinois';&#xA;UPDATE stg_customer_may_G06 SET CITY = 'Peoria' WHERE CITY = 'Chicago' AND STATE = 'Illinois';" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
   </DTS:Executables>
   <DTS:PrecedenceConstraints>
     <DTS:PrecedenceConstraint
@@ -1086,6 +2871,30 @@
       DTS:LogicalAnd="True"
       DTS:ObjectName="Restricción"
       DTS:To="Package\Data Flow Task" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restricción 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{B8CD40C4-C634-4C21-9C1C-CF49AA65F160}"
+      DTS:From="Package\Data Flow Task"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restricción 1"
+      DTS:To="Package\Delete DIM_CLIENTE" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restricción 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{FFE677A1-F5D5-4866-A5B4-DE1336790682}"
+      DTS:From="Package\Delete DIM_CLIENTE"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restricción 2"
+      DTS:To="Package\Tarea Ejecutar SQL 1" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restricción 3]"
+      DTS:CreationName=""
+      DTS:DTSID="{34B0DAFC-0460-46F8-9783-E93B1C78171F}"
+      DTS:From="Package\Tarea Ejecutar SQL 1"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restricción 3"
+      DTS:To="Package\Cargar DIM_CLIENTE" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--Esta sección CDATA contiene la información de diseño del paquete. Esta sección incluye información como, por ejemplo, las coordenadas (x,y), el ancho y el alto.-->
@@ -1098,15 +2907,27 @@
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="179.2,41.6"
+          Id="Package\Cargar DIM_CLIENTE"
+          TopLeft="65.7142858541741,454.235293719492" />
         <NodeLayout
           Size="150.4,41.6"
           Id="Package\Data Flow Task"
           TopLeft="361.666646906072,215.799998499354" />
         <NodeLayout
+          Size="178.4,41.6"
+          Id="Package\Delete DIM_CLIENTE"
+          TopLeft="327.857143555065,315.823529134933" />
+        <NodeLayout
           Size="170.4,41.6"
           Id="Package\Tarea Ejecutar SQL"
           TopLeft="244.166653325989,57.1999996022383" />
+        <NodeLayout
+          Size="178.4,41.6"
+          Id="Package\Tarea Ejecutar SQL 1"
+          TopLeft="90.0000001915864,280.647058577531" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Restricción]"
           TopLeft="329.366653325989,98.7999996022384">
@@ -1141,9 +2962,453 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restricción 1]"
+          TopLeft="436.866646906072,257.399998499354">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-19.8095033510074,58.4235306355791"
+              Start="0,0"
+              End="-19.8095033510074,50.9235306355791">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,25.2117653177896" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,25.2117653177896"
+                    Point2="0,29.2117653177896"
+                    Point3="-4,29.2117653177896" />
+                  <mssgle:LineSegment
+                    End="-15.8095033510074,29.2117653177896" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-15.8095033510074,29.2117653177896"
+                    Point2="-19.8095033510074,29.2117653177896"
+                    Point3="-19.8095033510074,33.2117653177896" />
+                  <mssgle:LineSegment
+                    End="-19.8095033510074,50.9235306355791" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restricción 2]"
+          TopLeft="327.857143555065,336.623529134933">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-59.4571433634782,-35.1764705574017"
+              Start="0,0"
+              End="-51.9571433634782,-35.1764705574017">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-25.7285716817391,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-25.7285716817391,0"
+                    Point2="-29.7285716817391,0"
+                    Point3="-29.7285716817391,-4" />
+                  <mssgle:LineSegment
+                    End="-29.7285716817391,-31.1764705574017" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-29.7285716817391,-31.1764705574017"
+                    Point2="-29.7285716817391,-35.1764705574017"
+                    Point3="-33.7285716817391,-35.1764705574017" />
+                  <mssgle:LineSegment
+                    End="-51.9571433634782,-35.1764705574017" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restricción 3]"
+          TopLeft="179.200000191586,322.247058577531">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-23.8857143374123,131.988235141961"
+              Start="0,0"
+              End="-23.8857143374123,124.488235141961">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,61.9941175709804" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,61.9941175709804"
+                    Point2="0,65.9941175709804"
+                    Point3="-4,65.9941175709804" />
+                  <mssgle:LineSegment
+                    End="-19.8857143374123,65.9941175709804" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-19.8857143374123,65.9941175709804"
+                    Point2="-23.8857143374123,65.9941175709804"
+                    Point3="-23.8857143374123,69.9941175709804" />
+                  <mssgle:LineSegment
+                    End="-23.8857143374123,124.488235141961" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </Package>
+  <TaskHost
+    design-time-name="Package\Cargar DIM_CLIENTE">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="162.4,41.6"
+          Id="Package\Cargar DIM_CLIENTE\Derived Column 1"
+          TopLeft="618.999990776181,285.999995738268" />
+        <NodeLayout
+          Size="155.2,41.6"
+          Id="Package\Cargar DIM_CLIENTE\Data Conversion"
+          TopLeft="505.999992460013,460.999993130565" />
+        <NodeLayout
+          Size="112.8,41.6"
+          Id="Package\Cargar DIM_CLIENTE\Lookup"
+          TopLeft="625.857133531145,604.571419562612" />
+        <NodeLayout
+          Size="170.4,41.6"
+          Id="Package\Cargar DIM_CLIENTE\OLE DB Destination"
+          TopLeft="319.999995231628,614.999990954995" />
+        <NodeLayout
+          Size="158.4,41.6"
+          Id="Package\Cargar DIM_CLIENTE\OLE DB Source 1"
+          TopLeft="579.999991357327,182.999997273088" />
+        <NodeLayout
+          Size="120,41.6"
+          Id="Package\Cargar DIM_CLIENTE\Union All"
+          TopLeft="507.99999243021,383.999994277954" />
+        <NodeLayout
+          Size="152.8,41.6"
+          Id="Package\Cargar DIM_CLIENTE\Derived Column"
+          TopLeft="242.999996379018,291.999995648861" />
+        <NodeLayout
+          Size="149.6,41.6"
+          Id="Package\Cargar DIM_CLIENTE\OLE DB Source"
+          TopLeft="227.999996602535,148.999997779727" />
+        <EdgeLayout
+          Id="Package\Cargar DIM_CLIENTE.Paths[Derived Column Output1]"
+          TopLeft="700.199990776181,327.599995738268">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-113.533331679304,56.3999985396862"
+              Start="0,0"
+              End="-113.533331679304,48.8999985396862">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,29.3947359774458" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,29.3947359774458"
+                    Point2="0,33.3947359774458"
+                    Point3="-4,33.3947359774458" />
+                  <mssgle:LineSegment
+                    End="-109.533331679304,33.3947359774458" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-109.533331679304,33.3947359774458"
+                    Point2="-113.533331679304,33.3947359774458"
+                    Point3="-113.533331679304,37.3947359774458" />
+                  <mssgle:LineSegment
+                    End="-113.533331679304,48.8999985396862" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Cargar DIM_CLIENTE.Paths[Derived Column Output]"
+          TopLeft="319.399996379018,333.599995648861">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="229.933329384526,50.3999986290932"
+              Start="0,0"
+              End="229.933329384526,42.8999986290932">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,25.8421044514368" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,25.8421044514368"
+                    Point2="0,29.8421044514368"
+                    Point3="4,29.8421044514368" />
+                  <mssgle:LineSegment
+                    End="225.933329384526,29.8421044514368" />
+                  <mssgle:CubicBezierSegment
+                    Point1="225.933329384526,29.8421044514368"
+                    Point2="229.933329384526,29.8421044514368"
+                    Point3="229.933329384526,33.8421044514368" />
+                  <mssgle:LineSegment
+                    End="229.933329384526,42.8999986290932" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Cargar DIM_CLIENTE.Paths[Data Conversion Output]"
+          TopLeft="583.599992460013,502.599993130565">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="98.6571410711318,101.971426432047"
+              Start="0,0"
+              End="98.6571410711318,94.4714264320471">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,46.9857132160235" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,46.9857132160235"
+                    Point2="0,50.9857132160235"
+                    Point3="4,50.9857132160235" />
+                  <mssgle:LineSegment
+                    End="94.6571410711318,50.9857132160235" />
+                  <mssgle:CubicBezierSegment
+                    Point1="94.6571410711318,50.9857132160235"
+                    Point2="98.6571410711318,50.9857132160235"
+                    Point3="98.6571410711318,54.9857132160235" />
+                  <mssgle:LineSegment
+                    End="98.6571410711318,94.4714264320471" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Cargar DIM_CLIENTE.Paths[Union All Output 1]"
+          TopLeft="567.99999243021,425.599994277954">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="15.6000000298025,35.3999988526106"
+              Start="0,0"
+              End="15.6000000298025,27.8999988526106">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,13.6999994263053" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,13.6999994263053"
+                    Point2="0,17.6999994263053"
+                    Point3="4,17.6999994263053" />
+                  <mssgle:LineSegment
+                    End="11.6000000298025,17.6999994263053" />
+                  <mssgle:CubicBezierSegment
+                    Point1="11.6000000298025,17.6999994263053"
+                    Point2="15.6000000298025,17.6999994263053"
+                    Point3="15.6000000298025,21.6999994263053" />
+                  <mssgle:LineSegment
+                    End="15.6000000298025,27.8999988526106" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Cargar DIM_CLIENTE.Paths[OLE DB Source Output1]"
+          TopLeft="659.199991357327,224.599997273087">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="40.9999994188545,61.3999984651805"
+              Start="0,0"
+              End="40.9999994188545,53.8999984651805">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.6999992325902" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,26.6999992325902"
+                    Point2="0,30.6999992325902"
+                    Point3="4,30.6999992325902" />
+                  <mssgle:LineSegment
+                    End="36.9999994188545,30.6999992325902" />
+                  <mssgle:CubicBezierSegment
+                    Point1="36.9999994188545,30.6999992325902"
+                    Point2="40.9999994188545,30.6999992325902"
+                    Point3="40.9999994188545,34.6999992325902" />
+                  <mssgle:LineSegment
+                    End="40.9999994188545,53.8999984651805" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Cargar DIM_CLIENTE.Paths[OLE DB Source Output]"
+          TopLeft="302.799996602535,190.599997779727">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="16.5999997764826,101.399997869134"
+              Start="0,0"
+              End="16.5999997764826,93.899997869134">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,46.699998934567" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,46.699998934567"
+                    Point2="0,50.699998934567"
+                    Point3="4,50.699998934567" />
+                  <mssgle:LineSegment
+                    End="12.5999997764826,50.699998934567" />
+                  <mssgle:CubicBezierSegment
+                    Point1="12.5999997764826,50.699998934567"
+                    Point2="16.5999997764826,50.699998934567"
+                    Point3="16.5999997764826,54.699998934567" />
+                  <mssgle:LineSegment
+                    End="16.5999997764826,93.899997869134" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Cargar DIM_CLIENTE.Paths[Lookup Match Output]"
+          TopLeft="625.857133531145,625.371419562612">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-135.457138299517,10.4285713923832"
+              Start="0,0"
+              End="-127.957138299517,10.4285713923832">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-63.7285691497584,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-63.7285691497584,0"
+                    Point2="-67.7285691497584,0"
+                    Point3="-67.7285691497584,4" />
+                  <mssgle:LineSegment
+                    End="-67.7285691497584,6.42857139238322" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-67.7285691497584,6.42857139238322"
+                    Point2="-67.7285691497584,10.4285713923832"
+                    Point3="-71.7285691497584,10.4285713923832" />
+                  <mssgle:LineSegment
+                    End="-127.957138299517,10.4285713923832" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-124.788608212258,-22,114.120078125,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Cargar DIM_CLIENTE\Lookup">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[stg_regiones_G06]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Cargar DIM_CLIENTE\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Cargar DIM_CLIENTE\OLE DB Source 1">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Cargar DIM_CLIENTE\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <TaskHost
     design-time-name="Package\Data Flow Task">
     <LayoutInfo>
@@ -1157,40 +3422,6 @@
           Size="162.4,41.6"
           Id="Package\Data Flow Task\Extraer minoristas"
           TopLeft="277.499984838069,76.2666661363178" />
-        <EdgeLayout
-          Id="Package\Data Flow Task.Paths[cliente]"
-          TopLeft="358.699984838069,117.866666136318">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="32.7333317852688,111.799998933275"
-              Start="0,0"
-              End="32.7333317852688,104.299998933275">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,51.8999994666376" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,51.8999994666376"
-                    Point2="0,55.8999994666376"
-                    Point3="4,55.8999994666376" />
-                  <mssgle:LineSegment
-                    End="28.7333317852688,55.8999994666376" />
-                  <mssgle:CubicBezierSegment
-                    Point1="28.7333317852688,55.8999994666376"
-                    Point2="32.7333317852688,55.8999994666376"
-                    Point3="32.7333317852688,59.8999994666376" />
-                  <mssgle:LineSegment
-                    End="32.7333317852688,104.299998933275" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
         <NodeLayout
           Size="164.8,41.6"
           Id="Package\Data Flow Task\Extraer mayoristas"
@@ -1225,6 +3456,40 @@
                     Point3="97.6666605654691,47.3333328873582" />
                   <mssgle:LineSegment
                     End="97.6666605654691,79.1666657747163" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[cliente]"
+          TopLeft="358.699984838069,117.866666136318">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="32.7333317852688,111.799998933275"
+              Start="0,0"
+              End="32.7333317852688,104.299998933275">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,51.8999994666376" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,51.8999994666376"
+                    Point2="0,55.8999994666376"
+                    Point3="4,55.8999994666376" />
+                  <mssgle:LineSegment
+                    End="28.7333317852688,55.8999994666376" />
+                  <mssgle:CubicBezierSegment
+                    Point1="28.7333317852688,55.8999994666376"
+                    Point2="32.7333317852688,55.8999994666376"
+                    Point3="32.7333317852688,59.8999994666376" />
+                  <mssgle:LineSegment
+                    End="32.7333317852688,104.299998933275" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>

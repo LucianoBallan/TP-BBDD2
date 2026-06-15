@@ -2,13 +2,13 @@
 <BuildLog xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <ProjectInfo>
     <Name>TP_BDD2_2026</Name>
-    <LastWriteTime>2026-06-02T19:55:55.9663126Z</LastWriteTime>
+    <LastWriteTime>2026-06-15T04:15:22.3886352Z</LastWriteTime>
     <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
   </ProjectInfo>
   <LastBuildInfos>
     <ProjectBuildItemInfo>
       <Name>Dim-productos.dtsx</Name>
-      <LastWriteTime>2026-05-26T23:38:26.3798581Z</LastWriteTime>
+      <LastWriteTime>2026-06-14T21:34:53.6004782Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
@@ -18,27 +18,32 @@
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>Dim-regiones.dtsx</Name>
-      <LastWriteTime>2026-05-26T23:52:38.5441738Z</LastWriteTime>
+      <LastWriteTime>2026-06-14T21:36:34.8065313Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>Dim-customers.dtsx</Name>
-      <LastWriteTime>2026-05-26T23:58:56.8663268Z</LastWriteTime>
+      <LastWriteTime>2026-06-14T23:39:31.2273981Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>Dim-empleados.dtsx</Name>
-      <LastWriteTime>2026-05-27T00:06:47.271432Z</LastWriteTime>
+      <LastWriteTime>2026-06-15T01:31:56.3046793Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>Dim-holidays.dtsx</Name>
-      <LastWriteTime>2026-05-27T00:14:35.3720157Z</LastWriteTime>
+      <LastWriteTime>2026-06-15T04:09:15.8567449Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>Dim-billing.dtsx</Name>
-      <LastWriteTime>2026-06-02T19:55:55.9151835Z</LastWriteTime>
+      <LastWriteTime>2026-06-14T22:09:14.3440487Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>Billing_history.dtsx</Name>
+      <LastWriteTime>2026-06-15T04:15:22.3534345Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
   </LastBuildInfos>

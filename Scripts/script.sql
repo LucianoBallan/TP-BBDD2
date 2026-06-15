@@ -16,6 +16,25 @@ CREATE TABLE [dbo].[stg_billing_G06](
 	[region] [varchar](45) NULL
 ) ON [PRIMARY]
 GO
+/****** Object:  Table [dbo].[stg_billing_detail_G06]    Script Date: 13/6/2026 ******/
+CREATE TABLE [dbo].[stg_billing_detail_G06](
+	[billing_id] [int] NULL,
+	[product_id] [int] NULL,
+	[quantity] [int] NULL
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[stg_billing_history_G06]    Script Date: 13/6/2026 ******/
+-- Ventas históricas (SQL Server 2000-2008), TDChistorySales
+CREATE TABLE [dbo].[stg_billing_history_G06](
+	[id] [int] NULL,
+	[billing_id] [int] NULL,
+	[date] [datetime] NULL,
+	[customer_id] [int] NULL,
+	[employee_id] [int] NULL,
+	[product_id] [int] NULL,
+	[quantity] [int] NULL
+) ON [PRIMARY]
+GO
 /****** Object:  Table [dbo].[stg_prices_G06]    Script Date: 9/6/2026 23:19:41 ******/
 CREATE TABLE [dbo].[stg_prices_G06](
     [product_id]  [nvarchar](255) NULL,

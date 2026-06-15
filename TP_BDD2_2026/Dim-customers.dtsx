@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+﻿<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
   DTS:CreationDate="5/22/2026 8:21:47 PM"
@@ -7,12 +7,12 @@
   DTS:CreatorName="TOTOLENOVO\totor"
   DTS:DTSID="{40ED1FFA-2F8A-45FF-91AE-06249CF210DA}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="17.0.1016.0"
+  DTS:LastModifiedProductVersion="16.0.5685.2"
   DTS:LocaleID="11274"
   DTS:ObjectName="Dim-customers"
   DTS:PackageType="5"
-  DTS:VersionBuild="40"
-  DTS:VersionGUID="{1B054718-A174-4F09-B9E5-A41A7A43B35F}">
+  DTS:VersionBuild="48"
+  DTS:VersionGUID="{624C53F8-1C5E-4200-8BBA-B93D29AB7F57}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -25,7 +25,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=COMPUDEPEPERINA\SQLEXPRESS;Initial Catalog=bd_datawarehouse_2025_G15;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-Dim-customers-{DC91FB81-5573-4E04-9863-351A06A80272}COMPUDEPEPERINA\SQLEXPRESS.bd_datawarehouse_2025_G15;Auto Translate=False;" />
+          DTS:ConnectionString="Data Source=TOTOLENOVO\SQLEXPRESS;Initial Catalog=bd_datawarehouse_2025_G15;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Dim-customers-{DC91FB81-5573-4E04-9863-351A06A80272}COMPUDEPEPERINA\SQLEXPRESS.bd_datawarehouse_2025_G15;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -95,7 +95,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=COMPUDEPEPERINA\SQLEXPRESS;Initial Catalog=bd_staging_2026_G06;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Dim-productos-{C029CA31-9671-4D07-B772-52B9E8109D05}TotoLENOVO\SQLEXPRESS.bd_staging_2026_G06;" />
+          DTS:ConnectionString="Data Source=TOTOLENOVO\SQLEXPRESS;Initial Catalog=bd_staging_2026_G06;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Dim-productos-{C029CA31-9671-4D07-B772-52B9E8109D05}TotoLENOVO\SQLEXPRESS.bd_staging_2026_G06;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -288,7 +288,7 @@
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      length="50"
+                      length="100"
                       lineageId="Package\Cargar DIM_CLIENTE\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of CITY]"
                       name="Copy of CITY"
                       truncationRowDisposition="FailComponent">
@@ -310,7 +310,7 @@
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      length="50"
+                      length="100"
                       lineageId="Package\Cargar DIM_CLIENTE\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of STATE]"
                       name="Copy of STATE"
                       truncationRowDisposition="FailComponent">
@@ -436,6 +436,54 @@
                       cachedLength="255"
                       cachedName="BIRTH_DATE"
                       lineageId="Package\Cargar DIM_CLIENTE\OLE DB Source.Outputs[OLE DB Source Output].Columns[BIRTH_DATE]" />
+                    <inputColumn
+                      refId="Package\Cargar DIM_CLIENTE\Derived Column.Inputs[Derived Column Input].Columns[CITY]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="CITY"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Cargar DIM_CLIENTE\OLE DB Source.Outputs[OLE DB Source Output].Columns[CITY]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[TRIM](#{Package\Cargar DIM_CLIENTE\OLE DB Source.Outputs[OLE DB Source Output].Columns[CITY]})</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">TRIM(CITY)</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Cargar DIM_CLIENTE\Derived Column.Inputs[Derived Column Input].Columns[STATE]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="STATE"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Cargar DIM_CLIENTE\OLE DB Source.Outputs[OLE DB Source Output].Columns[STATE]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[TRIM](#{Package\Cargar DIM_CLIENTE\OLE DB Source.Outputs[OLE DB Source Output].Columns[STATE]})</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">TRIM(STATE)</property>
+                      </properties>
+                    </inputColumn>
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
@@ -541,6 +589,54 @@
                       cachedLength="255"
                       cachedName="BIRTH_DATE"
                       lineageId="Package\Cargar DIM_CLIENTE\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[BIRTH_DATE]" />
+                    <inputColumn
+                      refId="Package\Cargar DIM_CLIENTE\Derived Column 1.Inputs[Derived Column Input].Columns[CITY]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="CITY"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Cargar DIM_CLIENTE\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[CITY]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[TRIM](#{Package\Cargar DIM_CLIENTE\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[CITY]})</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">TRIM(CITY)</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Cargar DIM_CLIENTE\Derived Column 1.Inputs[Derived Column Input].Columns[STATE]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="STATE"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Cargar DIM_CLIENTE\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[STATE]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[TRIM](#{Package\Cargar DIM_CLIENTE\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[STATE]})</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">TRIM(STATE)</property>
+                      </properties>
+                    </inputColumn>
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
@@ -641,13 +737,13 @@
                   description="Specifies the SQL statement that generates the lookup table."
                   expressionType="Notify"
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=17.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from [dbo].[stg_regiones_G06]</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[stg_regiones_G06]</property>
                 <property
                   dataType="System.String"
                   description="Specifies a SQL statement that uses parameters to generate the lookup table."
                   expressionType="Notify"
                   name="SqlCommandParam"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=17.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (select * from [dbo].[stg_regiones_G06]) [refTable]
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[stg_regiones_G06]) [refTable]
 where [refTable].[Ciudad] = ? and [refTable].[Estado] = ?</property>
                 <property
                   dataType="System.Int32"
@@ -711,7 +807,7 @@ where [refTable].[Ciudad] = ? and [refTable].[Estado] = ?</property>
                       refId="Package\Cargar DIM_CLIENTE\Lookup.Inputs[Lookup Input].Columns[Copy of CITY]"
                       cachedCodepage="1252"
                       cachedDataType="str"
-                      cachedLength="50"
+                      cachedLength="100"
                       cachedName="Copy of CITY"
                       lineageId="Package\Cargar DIM_CLIENTE\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of CITY]">
                       <properties>
@@ -729,7 +825,7 @@ where [refTable].[Ciudad] = ? and [refTable].[Estado] = ?</property>
                       refId="Package\Cargar DIM_CLIENTE\Lookup.Inputs[Lookup Input].Columns[Copy of STATE]"
                       cachedCodepage="1252"
                       cachedDataType="str"
-                      cachedLength="50"
+                      cachedLength="100"
                       cachedName="Copy of STATE"
                       lineageId="Package\Cargar DIM_CLIENTE\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of STATE]">
                       <properties>
@@ -832,7 +928,7 @@ where [refTable].[Ciudad] = ? and [refTable].[Estado] = ?</property>
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=17.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -907,7 +1003,7 @@ where [refTable].[Ciudad] = ? and [refTable].[Estado] = ?</property>
                       refId="Package\Cargar DIM_CLIENTE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of CITY]"
                       cachedCodepage="1252"
                       cachedDataType="str"
-                      cachedLength="50"
+                      cachedLength="100"
                       cachedName="Copy of CITY"
                       externalMetadataColumnId="Package\Cargar DIM_CLIENTE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Ciudad]"
                       lineageId="Package\Cargar DIM_CLIENTE\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of CITY]" />
@@ -915,7 +1011,7 @@ where [refTable].[Ciudad] = ? and [refTable].[Estado] = ?</property>
                       refId="Package\Cargar DIM_CLIENTE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of STATE]"
                       cachedCodepage="1252"
                       cachedDataType="str"
-                      cachedLength="50"
+                      cachedLength="100"
                       cachedName="Copy of STATE"
                       externalMetadataColumnId="Package\Cargar DIM_CLIENTE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Estado]"
                       lineageId="Package\Cargar DIM_CLIENTE\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of STATE]" />
@@ -1047,7 +1143,7 @@ where [refTable].[Ciudad] = ? and [refTable].[Estado] = ?</property>
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=17.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
                 <property
                   dataType="System.String"
                   description="The variable that contains the SQL command to be executed."
@@ -1261,7 +1357,7 @@ where [refTable].[Ciudad] = ? and [refTable].[Estado] = ?</property>
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=17.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
                 <property
                   dataType="System.String"
                   description="The variable that contains the SQL command to be executed."
@@ -2379,7 +2475,7 @@ where [refTable].[Ciudad] = ? and [refTable].[Estado] = ?</property>
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=17.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -2552,7 +2648,7 @@ where [refTable].[Ciudad] = ? and [refTable].[Estado] = ?</property>
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=17.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -2977,37 +3073,139 @@ where [refTable].[Ciudad] = ? and [refTable].[Estado] = ?</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="112.8,41.6"
-          Id="Package\Cargar DIM_CLIENTE\Lookup"
-          TopLeft="602.9999910146,550.99999178946" />
-        <NodeLayout
-          Size="149.6,41.6"
-          Id="Package\Cargar DIM_CLIENTE\OLE DB Source"
-          TopLeft="227.999996602535,148.999997779727" />
-        <NodeLayout
           Size="162.4,41.6"
           Id="Package\Cargar DIM_CLIENTE\Derived Column 1"
           TopLeft="618.999990776181,285.999995738268" />
-        <NodeLayout
-          Size="158.4,41.6"
-          Id="Package\Cargar DIM_CLIENTE\OLE DB Source 1"
-          TopLeft="579.999991357327,182.999997273088" />
-        <NodeLayout
-          Size="152.8,41.6"
-          Id="Package\Cargar DIM_CLIENTE\Derived Column"
-          TopLeft="242.999996379018,291.999995648861" />
-        <NodeLayout
-          Size="170.4,41.6"
-          Id="Package\Cargar DIM_CLIENTE\OLE DB Destination"
-          TopLeft="414.999993816018,559.999991774559" />
         <NodeLayout
           Size="155.2,41.6"
           Id="Package\Cargar DIM_CLIENTE\Data Conversion"
           TopLeft="505.999992460013,460.999993130565" />
         <NodeLayout
+          Size="112.8,41.6"
+          Id="Package\Cargar DIM_CLIENTE\Lookup"
+          TopLeft="625.857133531145,604.571419562612" />
+        <NodeLayout
+          Size="170.4,41.6"
+          Id="Package\Cargar DIM_CLIENTE\OLE DB Destination"
+          TopLeft="319.999995231628,614.999990954995" />
+        <NodeLayout
+          Size="158.4,41.6"
+          Id="Package\Cargar DIM_CLIENTE\OLE DB Source 1"
+          TopLeft="579.999991357327,182.999997273088" />
+        <NodeLayout
           Size="120,41.6"
           Id="Package\Cargar DIM_CLIENTE\Union All"
           TopLeft="507.99999243021,383.999994277954" />
+        <NodeLayout
+          Size="152.8,41.6"
+          Id="Package\Cargar DIM_CLIENTE\Derived Column"
+          TopLeft="242.999996379018,291.999995648861" />
+        <NodeLayout
+          Size="149.6,41.6"
+          Id="Package\Cargar DIM_CLIENTE\OLE DB Source"
+          TopLeft="227.999996602535,148.999997779727" />
+        <EdgeLayout
+          Id="Package\Cargar DIM_CLIENTE.Paths[Derived Column Output1]"
+          TopLeft="700.199990776181,327.599995738268">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-113.533331679304,56.3999985396862"
+              Start="0,0"
+              End="-113.533331679304,48.8999985396862">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,29.3947359774458" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,29.3947359774458"
+                    Point2="0,33.3947359774458"
+                    Point3="-4,33.3947359774458" />
+                  <mssgle:LineSegment
+                    End="-109.533331679304,33.3947359774458" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-109.533331679304,33.3947359774458"
+                    Point2="-113.533331679304,33.3947359774458"
+                    Point3="-113.533331679304,37.3947359774458" />
+                  <mssgle:LineSegment
+                    End="-113.533331679304,48.8999985396862" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Cargar DIM_CLIENTE.Paths[Derived Column Output]"
+          TopLeft="319.399996379018,333.599995648861">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="229.933329384526,50.3999986290932"
+              Start="0,0"
+              End="229.933329384526,42.8999986290932">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,25.8421044514368" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,25.8421044514368"
+                    Point2="0,29.8421044514368"
+                    Point3="4,29.8421044514368" />
+                  <mssgle:LineSegment
+                    End="225.933329384526,29.8421044514368" />
+                  <mssgle:CubicBezierSegment
+                    Point1="225.933329384526,29.8421044514368"
+                    Point2="229.933329384526,29.8421044514368"
+                    Point3="229.933329384526,33.8421044514368" />
+                  <mssgle:LineSegment
+                    End="229.933329384526,42.8999986290932" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Cargar DIM_CLIENTE.Paths[Data Conversion Output]"
+          TopLeft="583.599992460013,502.599993130565">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="98.6571410711318,101.971426432047"
+              Start="0,0"
+              End="98.6571410711318,94.4714264320471">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,46.9857132160235" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,46.9857132160235"
+                    Point2="0,50.9857132160235"
+                    Point3="4,50.9857132160235" />
+                  <mssgle:LineSegment
+                    End="94.6571410711318,50.9857132160235" />
+                  <mssgle:CubicBezierSegment
+                    Point1="94.6571410711318,50.9857132160235"
+                    Point2="98.6571410711318,50.9857132160235"
+                    Point3="98.6571410711318,54.9857132160235" />
+                  <mssgle:LineSegment
+                    End="98.6571410711318,94.4714264320471" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\Cargar DIM_CLIENTE.Paths[Union All Output 1]"
           TopLeft="567.99999243021,425.599994277954">
@@ -3112,140 +3310,38 @@ where [refTable].[Ciudad] = ? and [refTable].[Estado] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Cargar DIM_CLIENTE.Paths[Lookup Match Output]"
-          TopLeft="641.933324347933,550.99999178946">
+          TopLeft="625.857133531145,625.371419562612">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-141.733330531915,8.99999998509873"
+              EndConnector="-135.457138299517,10.4285713923832"
               Start="0,0"
-              End="-141.733330531915,1.49999998509873">
+              End="-127.957138299517,10.4285713923832">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,-18.5" />
+                    End="-63.7285691497584,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,-18.5"
-                    Point2="0,-22.5"
-                    Point3="-4,-22.5" />
+                    Point1="-63.7285691497584,0"
+                    Point2="-67.7285691497584,0"
+                    Point3="-67.7285691497584,4" />
                   <mssgle:LineSegment
-                    End="-137.733330531915,-22.5" />
+                    End="-67.7285691497584,6.42857139238322" />
                   <mssgle:CubicBezierSegment
-                    Point1="-137.733330531915,-22.5"
-                    Point2="-141.733330531915,-22.5"
-                    Point3="-141.733330531915,-18.5" />
+                    Point1="-67.7285691497584,6.42857139238322"
+                    Point2="-67.7285691497584,10.4285713923832"
+                    Point3="-71.7285691497584,10.4285713923832" />
                   <mssgle:LineSegment
-                    End="-141.733330531915,1.49999998509873" />
+                    End="-127.957138299517,10.4285713923832" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-119.058051984708,-17.5,96.3827734375,11.609375"
+              BoundingBox="-124.788608212258,-22,114.120078125,16"
               RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Cargar DIM_CLIENTE.Paths[Derived Column Output1]"
-          TopLeft="700.199990776181,327.599995738268">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-113.533331679304,56.3999985396862"
-              Start="0,0"
-              End="-113.533331679304,48.8999985396862">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,29.3947359774458" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,29.3947359774458"
-                    Point2="0,33.3947359774458"
-                    Point3="-4,33.3947359774458" />
-                  <mssgle:LineSegment
-                    End="-109.533331679304,33.3947359774458" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-109.533331679304,33.3947359774458"
-                    Point2="-113.533331679304,33.3947359774458"
-                    Point3="-113.533331679304,37.3947359774458" />
-                  <mssgle:LineSegment
-                    End="-113.533331679304,48.8999985396862" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Cargar DIM_CLIENTE.Paths[Derived Column Output]"
-          TopLeft="319.399996379018,333.599995648861">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="229.933329384526,50.3999986290932"
-              Start="0,0"
-              End="229.933329384526,42.8999986290932">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,25.8421044514368" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,25.8421044514368"
-                    Point2="0,29.8421044514368"
-                    Point3="4,29.8421044514368" />
-                  <mssgle:LineSegment
-                    End="225.933329384526,29.8421044514368" />
-                  <mssgle:CubicBezierSegment
-                    Point1="225.933329384526,29.8421044514368"
-                    Point2="229.933329384526,29.8421044514368"
-                    Point3="229.933329384526,33.8421044514368" />
-                  <mssgle:LineSegment
-                    End="229.933329384526,42.8999986290932" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Cargar DIM_CLIENTE.Paths[Data Conversion Output]"
-          TopLeft="583.599992460013,502.599993130565">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="93.266665221254,48.3999986588955"
-              Start="0,0"
-              End="93.266665221254,40.8999986588955">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,24.6338453604375" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,24.6338453604375"
-                    Point2="0,28.6338453604375"
-                    Point3="4,28.6338453604375" />
-                  <mssgle:LineSegment
-                    End="89.266665221254,28.6338453604375" />
-                  <mssgle:CubicBezierSegment
-                    Point1="89.266665221254,28.6338453604375"
-                    Point2="93.266665221254,28.6338453604375"
-                    Point3="93.266665221254,32.6338453604375" />
-                  <mssgle:LineSegment
-                    End="93.266665221254,40.8999986588955" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -3257,7 +3353,7 @@ where [refTable].[Ciudad] = ? and [refTable].[Estado] = ?</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:string">false</Value>
+          type="q2:boolean">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -3275,7 +3371,7 @@ where [refTable].[Ciudad] = ? and [refTable].[Estado] = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Cargar DIM_CLIENTE\OLE DB Source">
+    design-time-name="Package\Cargar DIM_CLIENTE\OLE DB Destination">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -3301,7 +3397,7 @@ where [refTable].[Ciudad] = ? and [refTable].[Estado] = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Cargar DIM_CLIENTE\OLE DB Destination">
+    design-time-name="Package\Cargar DIM_CLIENTE\OLE DB Source">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -3317,7 +3413,7 @@ where [refTable].[Ciudad] = ? and [refTable].[Estado] = ?</property>
     design-time-name="Package\Data Flow Task">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="171.2,41.6"
           Id="Package\Data Flow Task\OLE DB Destination"
@@ -3365,9 +3461,7 @@ where [refTable].[Ciudad] = ? and [refTable].[Estado] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -3401,9 +3495,7 @@ where [refTable].[Ciudad] = ? and [refTable].[Estado] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
