@@ -7,12 +7,13 @@
   DTS:CreatorName="TOTOLENOVO\totor"
   DTS:DTSID="{1459D400-A9C6-43D1-B8E7-66C7D42D1E31}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="16.0.5685.2"
+  DTS:LastModifiedProductVersion="17.0.1016.0"
   DTS:LocaleID="11274"
   DTS:ObjectName="Dim-billing"
   DTS:PackageType="5"
-  DTS:VersionBuild="48"
-  DTS:VersionGUID="{FEB7C9F9-8F82-44C2-8E9B-417832901187}">
+  DTS:ProtectionLevel="0"
+  DTS:VersionBuild="49"
+  DTS:VersionGUID="{1947E36F-F1D8-4E94-AEBF-58FDA9E398D6}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -78,12 +79,7 @@
       DTS:ObjectName="src_mysql">
       <DTS:ObjectData>
         <DTS:ConnectionManager
-          DTS:ConnectionString="uid=alumno;Dsn=MySQL_Sales;">
-          <DTS:Password
-            DTS:Name="pwd"
-            Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAbyZSC5L5HUSXwBjgTDTfAAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAAWnHoLVI8ZUDQ2vtF1GvRnfQf+MMrxLI3VSxPGI9xPBwAAAAAOgAAAAAIAACAAAABxlGMLWI883hHO33vfjmNLM03a1YBZOmcbSiyJJPXniCAAAAAPOQ2u51c3XMtyw9T+M1f9eEmkJx0o1VflTcrp7e/Cx0AAAACOdC/wycsNx1vxJ/2OmihdPVCm/ShqNTLdQzISKbXoAAVIVaBEasQ+PiSB31ESqQMPMorZ0N4j7vGD2LlQjlrW</DTS:Password>
-        </DTS:ConnectionManager>
+          DTS:ConnectionString="uid=alumno;Dsn=MySQL_Sales;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -95,12 +91,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=server-tuia.database.windows.net;User ID=alumno;Initial Catalog=TDChistorySales2;Provider=MSOLEDBSQL.1;Persist Security Info=True;Auto Translate=False;Application Name=SSIS-Dim-billing-{2311474B-D892-45B4-ACAD-CF1ABB1E7A51}server-tuia.database.windows.net.TDChistorySales1.alumno;">
-          <DTS:Password
-            DTS:Name="Password"
-            Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAbyZSC5L5HUSXwBjgTDTfAAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAAejdJp01FteO7yArW9MM8bw6vUKWLzqf1VggKqpKJRtAAAAAAOgAAAAAIAACAAAADuMvRNYtK7cSgJ+WjWoAmruDYwcsZVaA5JQcguEsGGGSAAAABXzlUcIZ5s6uPZxLyBbWmCqlHQLF3MrlqFgS4m1aSws0AAAACxNYF3K6jv/OoGfBgsA97yErWiJrLgwuczb/5cX8/FXgR3R6mBorny6PE2uuBiCv9Yzxvxc4YhtceFp6hBhdnP</DTS:Password>
-        </DTS:ConnectionManager>
+          DTS:ConnectionString="Data Source=server-tuia.database.windows.net;User ID=alumno;Initial Catalog=TDChistorySales2;Provider=MSOLEDBSQL.1;Persist Security Info=True;Auto Translate=False;Application Name=SSIS-Dim-billing-{2311474B-D892-45B4-ACAD-CF1ABB1E7A51}server-tuia.database.windows.net.TDChistorySales1.alumno;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -855,7 +846,7 @@
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=17.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -988,7 +979,7 @@
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=17.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -1124,7 +1115,7 @@
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=17.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -1270,7 +1261,7 @@
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=17.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -1637,11 +1628,11 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="112,41.6"
+          Size="112,42"
           Id="Package\staging"
           TopLeft="304.999983335535,175.933332109915" />
         <NodeLayout
-          Size="328.8,41.6"
+          Size="329,42"
           Id="Package\Truncar tablas billing, billing_detail, prices, y discounts"
           TopLeft="78.3333290533891,45.0666663532787" />
         <EdgeLayout

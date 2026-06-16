@@ -8,6 +8,8 @@
         <UseWinAuth>false</UseWinAuth>
         <WinAuthUserName />
         <WinAuthDomain />
+        <ServerName />
+        <PathOnServer />
         <StartObjectID>Dim-holidays.dtsx</StartObjectID>
         <UserIDs />
         <UserPasswords />
