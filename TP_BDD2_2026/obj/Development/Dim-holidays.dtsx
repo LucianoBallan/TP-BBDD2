@@ -11,8 +11,9 @@
   DTS:LocaleID="11274"
   DTS:ObjectName="Dim-holidays"
   DTS:PackageType="5"
-  DTS:VersionBuild="24"
-  DTS:VersionGUID="{0C93B33C-E76A-427B-9E9A-2F126EBC6D0F}">
+  DTS:ProtectionLevel="0"
+  DTS:VersionBuild="26"
+  DTS:VersionGUID="{54B4685D-6202-4FBD-B891-59DA9C174AE4}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -107,7 +108,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=COMPUDEPEPERINA\SQLEXPRESS;Initial Catalog=bd_staging_2026_G06;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Dim-productos-{5B5921F7-794B-47CC-B34C-A6CB7276908C}TotoLENOVO\SQLEXPRESS.bd_staging_2026_G06;" />
+          DTS:ConnectionString="Data Source=TOTOLENOVO\SQLEXPRESS;Initial Catalog=bd_staging_2026_G06;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Dim-productos-{5B5921F7-794B-47CC-B34C-A6CB7276908C}TotoLENOVO\SQLEXPRESS.bd_staging_2026_G06;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -486,7 +487,7 @@
           Id="Package\Data Flow Task"
           TopLeft="361.666646906072,215.799998499354" />
         <NodeLayout
-          Size="170.4,41.6"
+          Size="169.6,41.6"
           Id="Package\Tarea Ejecutar SQL"
           TopLeft="244.166653325989,57.1999996022383" />
         <EdgeLayout

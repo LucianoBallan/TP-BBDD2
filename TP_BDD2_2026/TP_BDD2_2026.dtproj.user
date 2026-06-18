@@ -10,7 +10,7 @@
         <WinAuthDomain />
         <ServerName />
         <PathOnServer />
-        <StartObjectID>Dim-holidays.dtsx</StartObjectID>
+        <StartObjectID>Fact-ventas.dtsx</StartObjectID>
         <UserIDs />
         <UserPasswords />
         <OfflineMode>false</OfflineMode>
