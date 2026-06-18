@@ -4,9 +4,12 @@ GO
 CREATE OR ALTER VIEW dbo.vw_stg_ventas_procesadas AS
 WITH 
 -- 1. Unificamos las ventas históricas y las actuales en un solo flujo unificado
+-- El historial puede tener múltiples líneas del mismo producto en una factura (quantities distintas),
+-- por eso se agrega con SUM para que quede una sola fila por (billing_id, product_id).
 VentasUnificadas AS (
-    SELECT billing_id, [date] AS Fecha, customer_id, employee_id, product_id, quantity
+    SELECT billing_id, [date] AS Fecha, customer_id, employee_id, product_id, SUM(quantity) AS quantity
     FROM dbo.stg_billing_history_G06
+    GROUP BY billing_id, [date], customer_id, employee_id, product_id
     UNION ALL
     SELECT billing_id, [date] AS Fecha, customer_id, employee_id, product_id, quantity
     FROM dbo.stg_billing_G06
@@ -27,8 +30,8 @@ VentasConPrecio AS (
         v.*,
         ISNULL(p.PriceVigente, 0) AS PrecioUnitario,
         v.quantity * ISNULL(p.PriceVigente, 0) AS MontoBrutoLinea,
-        CAST(cg.CITY AS VARCHAR(100)) AS ClientCity,
-        CAST(cg.STATE AS VARCHAR(100)) AS ClientState,
+        RTRIM(CAST(cg.CITY AS VARCHAR(100))) AS ClientCity,
+        RTRIM(CAST(cg.STATE AS VARCHAR(100))) AS ClientState,
         CAST(cg.ZIPCODE AS VARCHAR(100)) AS ClientZipCode
     FROM VentasUnificadas v
     LEFT JOIN ClientesGeografia cg ON v.customer_id = cg.customer_id
@@ -73,7 +76,8 @@ SELECT
     v.product_id AS ProductoID,
     v.ClientCity,
     v.ClientState,
-    v.ClientZipCode,
+    -- Se paddea a 5 digitos porque el XML de clientes omite el cero a la izquierda
+    RIGHT('00000' + ISNULL(v.ClientZipCode, ''), 5) AS ClientZipCode,
     v.quantity AS Cantidad,
     CAST((v.quantity * dp.CapacidadML) / 1000.0 AS DECIMAL(18,2)) AS Litros,
     CAST(v.MontoBrutoLinea AS DECIMAL(18,2)) AS MontoBruto,
@@ -81,5 +85,6 @@ SELECT
     CAST(v.MontoBrutoLinea * (1.0 - (df.PorcentajeDescuento / 100.0)) AS DECIMAL(18,2)) AS MontoNeto
 FROM VentasConPrecio v
 INNER JOIN DescuentoPorFactura df ON v.billing_id = df.billing_id
-INNER JOIN bd_datawarehouse_2025_G15.dbo.DIM_PRODUCTO dp ON v.product_id = dp.ProductoID;
+INNER JOIN bd_datawarehouse_2025_G15.dbo.DIM_PRODUCTO dp ON v.product_id = dp.ProductoID
+WHERE v.Fecha IS NOT NULL;
 GO
